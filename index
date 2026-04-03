@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#F7F1F1]">
+    <div class="mt-3 mb-3 ml-37 mx-37 ">
+        <div class="text- flex flex-row justify-between text-[rgb(10, 3, 60)] text-[12px] font-medium">
+            <img src="https://eduvifigma.netlify.app/img/icons/header__logo.svg" alt="header__logo">
+            <ul class="flex flex-row gap-8">
+                <li><a href="#">Shop <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                <li><a href="#">For Kindergaten <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                <li><a href="#">For High School <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                <li><a href="#">For College <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                <li><a href="#">Courses <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+            </ul>
+            <ul class="flex flex-row gap-4">
+                <li><a href="#">cart <i class="fa-solid fa-bag-shopping" style="color: rgb(248, 97, 7);"></i></a></li>
+                <li><a href="#">Account <i class="fa-regular fa-circle-user" style="color: rgb(83, 74, 154);"></i></a></li>
+            </ul>
+        </div>
+        <div class="bg-[#EFEBF5] rounded-lg mt-4 p-4">
+            <div class="flex flex-row text-[11px] gap-2">
+                <p><a href="#">Home</a></p> | <p><a href="#">Our Mentors</a></p>
+            </div>
+            <div class="gap-x-16 mt-3 mb-3 ml-30 mx-20 flex flex-row">
+                <h3 class="text-[#0A033C] pt-7 font-[700] text-[27px]">Eduvi has the <br>qualified mentor</h3>
+                <img class="mix-blend-multiply h-[auto] w-[340px]" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*UUBDgxAycYSS5OURTxLyqQ.jpeg" alt="">
+            </div>
+        </div>
+        <div class="mt-3 gap-x-4 text-center flex text-[13px] flex-row">
+            <p class="bg-[#FFFFFF] hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-3"><a href="#">All Mentors</a></p>
+            <p class="bg-[#FFFFFF] hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-3"><a href="#">For Kindergaten</a></p>
+            <p class="bg-[#FFFFFF] hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-3"><a href="#">For High School</a></p>
+            <p class="bg-[#FFFFFF] hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-3"><a href="#">For College</a></p>
+            <p class="bg-[#FFFFFF] hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-3"><a href="#">For Technology</a></p>
+        </div>
+    </div>
+</body>
+</html>
