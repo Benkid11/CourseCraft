@@ -2,24 +2,137 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'DM Sans', 'Times New Roman', serif;
 }
 
-.nav{
+body {
+    background-color: #f5f0eb;
+}
+
+.nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: rgb(0, 0, 0);
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    padding-bottom: 16px;
-    padding-top: 30px;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background-color: #f5f0eb;
     position: fixed;
-    top: 0px;
-    transition: 0.5s;
-    z-index: 1;
+    top: 0;
     width: 100%;
-    opacity: 0.9;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
 }
 
+.logo {
+    height: 36px;
+    display: block;
+}
+
+/* Center menu */
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 55px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+}
+
+.menu li a:hover {
+    color: #e8513a;
+}
+
+.arrow {
+    font-size: 11px;
+    color: #e8513a;
+}
+
+/* Right side: Cart + My Account */
+.nav-actions {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-actions li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-actions li a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-actions li a:hover {
+    color: #e8513a;
+}
+
+.cart-icon,
+.account-icon {
+    font-size: 18px;
+    color: #e8513a;
+}
+
+/* make the li position relative so dropdown appears below it */
+.has-dropdown {
+    position: relative;
+}
+
+/* hide the dropdown by default */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;          /* sits just below the nav link */
+    left: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    min-width: 180px;
+    list-style: none;
+    z-index: 200;
+}
+
+/* show it on hover */
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* style the dropdown links */
+.dropdown li a {
+    display: block;
+    padding: 10px 20px;
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.dropdown li a:hover {
+    color: #e8513a;
+    background-color: #f5f0eb;
+}
+
+.has-dropdown img {
+    transition: transform 0.3s;
+}
+
+.has-dropdown:hover img {
+    transform: rotate(180deg);
+}
