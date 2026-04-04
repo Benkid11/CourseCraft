@@ -243,3 +243,50 @@ body {
 .dots img {
     width: 120px;      /* adjust size to match your design */
 }
+
+.course-list {
+    margin: 20px 80px 0 80px;
+}
+
+.course-list ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    min-height: 60px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.course-list ul li a {
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+    background-color: #fff;
+    box-shadow: 0 2px 12px #e4d9ee;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px 22px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-list ul li a:hover {
+    background-color: #e8513a;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: color 0.4s, background-color 0.4s, box-shadow 0.4s, transform 0.4s;
+}
+
+.course-list ul li a:active{
+    color: #e4d9ee;
+}
