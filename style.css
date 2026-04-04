@@ -331,6 +331,13 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 4px 20px hsl(11, 79%, 70%);
 }
 
 .card-number {
@@ -397,4 +404,11 @@ body {
 .card-grid a:hover {
   background-color: rgba(156, 77, 244, 1);
   color: #fff;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
 }
