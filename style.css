@@ -189,6 +189,14 @@ body {
     font-size: 13px;
     color: #888;
     margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+:hover.breadcrumb {
+    color: #e8513a;
+    cursor: pointer;
 }
 
 .breadcrumb span {
@@ -199,8 +207,17 @@ body {
 .hero-text h1 {
     font-size: 36px;
     font-weight: 700;
-    color: #1a1a2e;
+    color: rgba(10, 3, 60, 1);
     line-height: 1.3;
+    position: absolute;
+    left: 159px;
+    top: 85px;
+    width: 382px;
+    height: 100px;
+    line-height: 50px;
+    font: metropolis, 'Times New Roman', serif;
+    font-weight: 600;
+    size: 45px;
 }
 
 /* right side image */
