@@ -199,13 +199,10 @@ body {
   left: 30px;
 }
 
-:hover.breadcrumb {
+.breadcrumb span:hover {
   color: #e8513a;
+  text-decoration: underline;
   cursor: pointer;
-}
-
-.breadcrumb span {
-  color: #e8513a;
 }
 
 .hero-text h1 {
@@ -337,7 +334,7 @@ body {
 
 .card:hover {
   transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 4px 20px hsl(11, 79%, 70%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.38);
 }
 
 .card-number {
