@@ -403,9 +403,134 @@ body {
   color: #fff;
 }
 
+.top h2 {
+  font: metropolis, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 100%;
+  color: rgba(10, 3, 60, 1);
+  margin: 40px 0;
+  width: 452px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+input::placeholder {
+  font: metropolis, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(93, 90, 111, 0.6);
+}
+
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 640px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 7px;
+}
+
 .search {
+  flex: 1; /* takes up remaining space */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+  color: rgba(93, 90, 111, 0.6);
+  background: transparent;
+}
+
+.search-btn {
+  height: 100%;
+  padding: 0 24px;
+  background-color: #7b61ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 8px;
+}
+
+.search-btn:hover {
+  background-color: #6a50ee;
+}
+
+.sort {
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2d2d2d;
+  background-color: white;
+  cursor: pointer;
+  min-width: 180px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 120px;
+  gap: 10px;
+  position: relative; /* anchor for dropdown */
+  width: 400px;
+}
+
+.sort-arrow {
+  transition: transform 0.3s;
+  width: 14px;
+}
+
+.sort.has-sort-dropdown:hover .sort-arrow {
+  transform: rotate(180deg);
+}
+
+.sort-dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.has-sort-dropdown:hover .sort-dropdown {
+  display: block;
+}
+
+.sort-dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  color: #2d2d2d;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.sort-dropdown li a:hover {
+  color: #7b61ff;
+  background-color: #f7f5fa;
 }

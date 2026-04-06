@@ -228,11 +228,30 @@
 
       <div class="top">
         <h2>Other Courses For High School</h2>
-        <a href="#">View All</a>
 
-        <input type="text" name="Class, Course Search" id="Search" placeholder="Search Class, Course" class="search" />
+        <div class="search-row">
+
+          <div class="search-box">
+            <input type="text" name="Class, Course Search" id="Search" placeholder="Search Class, Course" class="search" />
+            <button class="search-btn">🔍 Search</button>
+          </div>
+
+          <div class="sort has-sort-dropdown">
+              <span>Sort by: <strong>Latest</strong></span>
+              <img src="images/down arrow.png" alt="" class="sort-arrow">
+              <ul class="sort-dropdown">
+                  <li><a href="#">Latest</a></li>
+                  <li><a href="#">Oldest</a></li>
+                  <li><a href="#">Price</a></li>
+              </ul>
+          </div>
+          
+        </div>
+
       </div>
 
     </section>
+
+
   </body>
 </html>
