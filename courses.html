@@ -231,21 +231,24 @@
 
         <div class="search-row">
 
-          <div class="search-box">
-            <input type="text" name="Class, Course Search" id="Search" placeholder="Search Class, Course" class="search" />
-            <button class="search-btn">🔍 Search</button>
-          </div>
+          <form action="/search" method="get" class="search-row" id="search-row" name="search-row" target="_blank">
 
-          <div class="sort has-sort-dropdown">
-              <span>Sort by: <strong>Latest</strong></span>
-              <img src="images/down arrow.png" alt="" class="sort-arrow">
-              <ul class="sort-dropdown">
-                  <li><a href="#">Latest</a></li>
-                  <li><a href="#">Oldest</a></li>
-                  <li><a href="#">Price</a></li>
-              </ul>
-          </div>
-          
+            <div class="search-box">
+              <input type="text" name="Class, Course Search" id="Search" placeholder="Search Class, Course" class="search" />
+              <button class="search-btn">🔍 Search</button>
+            </div>
+
+            <div class="sort has-sort-dropdown">
+                <span>Sort by: <strong>Latest</strong></span>
+                <img src="images/down arrow.png" alt="" class="sort-arrow">
+                <ul class="sort-dropdown">
+                    <li><a href="#">Latest</a></li>
+                    <li><a href="#">Oldest</a></li>
+                    <li><a href="#">Price</a></li>
+                </ul>
+            </div>
+          </form>
+
         </div>
 
       </div>
