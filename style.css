@@ -26,3 +26,189 @@ body {
   transition: 0.3s;
   opacity: 0.95;
 }
+
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+  padding: auto;
+}
+
+.logo-icon {
+  background-color: #e8513a;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  letter-spacing: -0.3px;
+}
+
+/* --- Center Menu --- */
+.menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 28px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s;
+}
+
+.menu li a:hover {
+  color: #e8513a;
+}
+
+.nav-actions {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-actions li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-actions li a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-actions li a:hover {
+  color: #e8513a;
+}
+
+.nav-actions img {
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 18px;
+  color: #e8513a;
+}
+
+.cart-icon,
+.account-icon {
+  font-size: 18px;
+  color: #e8513a;
+}
+
+/* make the li position relative so dropdown appears below it */
+.has-dropdown {
+  position: relative;
+}
+
+/* hide the dropdown by default */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* sits just below the nav link */
+  left: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  min-width: 180px;
+  list-style: none;
+  z-index: 200;
+}
+
+/* show it on hover */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* style the dropdown links */
+.dropdown li a {
+  display: block;
+  padding: 10px 20px;
+  color: #2d2d2d;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.dropdown li a:hover {
+  color: #e8513a;
+  background-color: #f5f0eb;
+}
+
+.has-dropdown img {
+  transition: transform 0.3s;
+}
+
+.has-dropdown:hover img {
+  transform: rotate(180deg);
+}
+
+#container {
+  margin: 0 80px;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    margin-left: auto; /* push ☰ to far right */
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .nav-actions {
+    display: none; /* hide cart & account */
+  }
+
+  .nav {
+    padding: 15px 20px;
+  }
+}

@@ -169,6 +169,16 @@
   cursor: pointer;
 }
 
+.breadcrumb a {
+  color: #888;
+  text-decoration: none;
+}
+
+.breadcrumb a.active {
+  color: #e8513a;
+  text-decoration: underline;
+}
+
 .hero-text h1 {
   font-size: 36px;
   font-weight: 700;
