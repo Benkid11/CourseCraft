@@ -19,6 +19,8 @@
         ><img src="images/Logo (1).png" alt="Logo" class="logo"
       /></a>
 
+     <div class="menu-toggle">☰</div>
+
       <ul class="menu">
         <li><a href="#">Shop</a></li>
 
@@ -502,6 +504,16 @@
 
     </section>
 
+
+    <script>
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+
+
+      btn.onclick = function () {
+        menu.classList.toggle("active");
+      };
+    </script>
 
   </body>
 </html>

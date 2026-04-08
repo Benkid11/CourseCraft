@@ -1,32 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "DM Sans", "Times New Roman", serif;
-}
-
-body {
-  background-color: rgba(247, 245, 250, 1);
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
-  background-color: #f5f0eb;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  transition: 0.3s;
-  opacity: 0.95;
-}
-
 /* --- Logo --- */
 .logo {
   display: flex;
@@ -543,6 +514,8 @@ input::placeholder {
 .other-courses-card:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transform: translateY(-5px) scale(1.03);
+  transition: transform 0.4s ease;
 }
 
 /* Shopping bag icon */
@@ -675,10 +648,32 @@ input::placeholder {
   }
 }
 
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   .menu {
     display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
   }
 
   .card-grid {
@@ -699,6 +694,16 @@ input::placeholder {
 
   .nav {
     padding: 15px 20px;
+  }
+
+  .nav-actions {
+    display: none; /* hide cart & account */
+  }
+
+  .menu-toggle {
+    margin-left: auto; /* push ☰ to far right */
+    font-size: 28px;
+    cursor: pointer;
   }
 }
 
