@@ -65,6 +65,11 @@
         </li>
       </ul>
 
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </div>
+
       <ul class="nav-actions">
         <li>
           <a href="#">Cart (0)</a>
@@ -365,6 +370,40 @@
           </div>
         </div>
       </div>
+
+      <div class="subscribe">
+        <h2>
+          Subscribe For Get Update <br />
+          Every New Courses
+        </h2>
+
+        <!--floating images-->
+        <img src="images/sub1.png" alt="" class="img1" />
+        <img src="images/sub2.png" alt="" class="img2" />
+        <img src="images/sub3.png" alt="" class="img3" />
+        <img src="images/sub4.png" alt="" class="img4" />
+        <img src="images/sub5.png" alt="" class="img5" />
+        <img src="images/sub6.png" alt="" class="img6" />
+
+        <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+
+        <div class="subscribe-form">
+          <input type="email" placeholder="enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <div class="footer"></div>
+      `
+
+      <script>
+        const btn = document.querySelector(".menu-toggle");
+        const menu = document.querySelector(".menu");
+
+        btn.onclick = function () {
+          menu.classList.toggle("active");
+        };
+      </script>
     </div>
   </body>
 </html>

@@ -15,19 +15,15 @@
     <!-- navbar -->
 
     <div class="nav">
-      <a href="index.html"
-        ><img src="images/Logo (1).png" alt="Logo" class="logo"
-      /></a>
-
-     <div class="menu-toggle">☰</div>
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
 
       <ul class="menu">
         <li><a href="#">Shop</a></li>
 
         <li class="has-dropdown">
-          <a href="#"
-            >For Kindergarten <img src="images/down arrow.png" alt=""
-          /></a>
+          <a href="#">For Kindergarten <img src="images/down arrow.png" alt="" /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
             <li><a href="#">English</a></li>
@@ -36,9 +32,7 @@
         </li>
 
         <li class="has-dropdown">
-          <a href="#"
-            >For High School <img src="images/down arrow.png" alt=""
-          /></a>
+          <a href="#">For High School <img src="images/down arrow.png" alt="" /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
             <li><a href="#">English</a></li>
@@ -72,13 +66,21 @@
         </li>
         <li>
           <a href="#">My Account</a>
-          <img
-            src="images/account image.png"
-            alt="account"
-            class="account-icon"
-          />
+          <img src="images/account image.png" alt="account" class="account-icon" />
         </li>
       </ul>
+
+      <div class="mobile-nav-actions">
+        <div class="mobile-profile" id="mobileProfileBtn">
+          <img src="images/account image.png" alt="account" class="account-icon" />
+        </div>
+        <div id="menuToggle">☰</div>
+      </div>
+
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </div>
     </div>
 
     <div id="container">
@@ -508,13 +510,25 @@
 
 
     <script>
-      const btn = document.querySelector(".menu-toggle");
+      const menuBtn = document.getElementById("menuToggle");
       const menu = document.querySelector(".menu");
+      const profileBtn = document.getElementById("mobileProfileBtn");
+      const profileDropdown = document.getElementById("profileDropdown");
 
-
-      btn.onclick = function () {
+      menuBtn.onclick = function () {
         menu.classList.toggle("active");
+        profileDropdown.classList.remove("open");
       };
+
+      profileBtn.onclick = function (e) {
+        e.stopPropagation();
+        profileDropdown.classList.toggle("open");
+        menu.classList.remove("active");
+      };
+
+      document.addEventListener("click", function () {
+        profileDropdown.classList.remove("open");
+      });
     </script>
 
   </body>

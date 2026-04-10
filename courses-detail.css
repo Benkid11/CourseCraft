@@ -349,3 +349,341 @@
   font-weight: bold;
   margin: 0;
 }
+
+.subscribe {
+  position: relative;
+  background-color: rgba(10, 3, 60, 1);
+  border-radius: 20px;
+  width: 100%;
+  height: 420px;
+  color: rgba(255, 255, 255, 1);
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  margin: 60px 0;
+}
+
+.subscribe h2 {
+  font-size: 35px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40px;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  font-family: metropolis, "Times New Roman", serif;
+}
+
+.subscribe p {
+  font-family: metropolis, "Times New Roman", serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 40px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+/* --- form --- */
+.subscribe-form {
+  display: inline-flex; /* keeps form centered */
+  overflow: hidden;
+  background-color: #1a2060;
+}
+
+.subscribe-form input {
+  width: 471px;
+  padding: 14px 20px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: #1a2060;
+  color: white;
+  font-size: 14px;
+}
+
+.subscribe-form input::placeholder {
+  color: #888;
+}
+
+.subscribe-form button {
+  padding: 14px 28px;
+  background-color: rgba(156, 77, 244, 1);
+  color: white;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.subscribe-form button:hover {
+  background-color: #6a50ee;
+}
+
+/* --- floating images --- */
+.subscribe img {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%; /* makes them circular */
+  object-fit: cover;
+}
+
+/* position each image individually */
+.img1 {
+  top: 104px;
+  left: 39px;
+  width: 40px;
+  height: 40px;
+}
+
+.img2 {
+  top: 169px;
+  left: 166px;
+  width: 40px;
+  height: 40px;
+}
+
+.img3 {
+  top: 274px;
+  left: 69px;
+  width: 40px;
+  height: 40px;
+}
+
+.img4 {
+  top: 64px;
+  right: 60px;
+  width: 40px;
+  height: 40px;
+}
+
+.img5 {
+  top: 143px;
+  right: 157px;
+  width: 40px;
+  height: 40px;
+}
+
+.img6 {
+  top: 243px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Profile dropdown (global, used on mobile) */
+.mobile-nav-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.mobile-profile {
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 65px;
+  right: 80px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 150px;
+  z-index: 300;
+  overflow: hidden;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 12px 20px;
+  color: #2d2d2d;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.profile-dropdown a:hover {
+  color: #e8513a;
+  background-color: #f5f0eb;
+}
+
+.profile-dropdown.open {
+  display: block;
+}
+
+/* ════════════════════════
+   TABLET (max 1024px)
+════════════════════════ */
+@media (max-width: 1024px) {
+  #container {
+    margin: 0 40px;
+  }
+
+  /* Hero stacks vertically */
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-right {
+    width: 100%;
+  }
+
+  /* Course body stacks vertically */
+  .course-body {
+    flex-direction: column;
+  }
+
+  .course-card {
+    width: 100%;
+  }
+
+  .course-details {
+    width: 100%;
+  }
+
+  /* Similar courses 1 column */
+  #similar-courses-card {
+    grid-template-columns: 1fr;
+  }
+
+  /* Subscribe form */
+  .subscribe-form input {
+    width: 300px;
+  }
+
+  /* Hide floating images on smaller screens */
+  .img2,
+  .img5 {
+    display: none;
+  }
+}
+
+/* ════════════════════════
+   MOBILE (max 768px)
+════════════════════════ */
+@media (max-width: 768px) {
+  #container {
+    margin: 0;
+    padding: 0 16px;
+  }
+
+  /* Hero */
+  .hero {
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  /* Subscribe section */
+  .subscribe {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .subscribe h2 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 20px;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .subscribe-form input {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .subscribe-form button {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    border-top-right-radius: 0;
+  }
+
+  .mobile-nav-actions {
+    display: flex;
+  }
+
+  .menu-toggle {
+    margin-left: 0; /* reset since it's now inside .mobile-nav-actions */
+  }
+
+  .profile-dropdown {
+    right: 20px; /* align to mobile margin */
+  }
+
+  /* Hide all floating images on mobile */
+  .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img6 {
+    display: none;
+  }
+
+  /* Course card */
+  .course-card {
+    width: 100%;
+  }
+
+  /* Similar courses heading */
+  .similar-courses h2 {
+    font-size: 28px;
+    line-height: 36px;
+    margin: 40px 0;
+  }
+
+  /* Playlist */
+  .hero-right {
+    width: 100%;
+  }
+
+  /* Course details */
+  .course-details h1,
+  .course-details h2 {
+    font-size: 22px;
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+/* ════════════════════════
+   SMALL MOBILE (max 480px)
+════════════════════════ */
+@media (max-width: 480px) {
+  .subscribe h2 {
+    font-size: 20px;
+  }
+
+  .hero {
+    padding: 14px;
+  }
+
+  .course-details {
+    padding: 16px;
+  }
+
+  .other-courses-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-img {
+    width: 100%;
+    height: 140px;
+  }
+
+  .card-bag {
+    top: 12px;
+    bottom: auto;
+  }
+}
