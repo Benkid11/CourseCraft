@@ -842,6 +842,11 @@ input::placeholder {
     padding: 15px 16px;
   }
 
+  .breadcrumb {
+    position: static;
+    margin-bottom: 10px;
+  }
+
   .menu.active {
     display: flex;
     flex-direction: column;
