@@ -571,6 +571,10 @@ body.dark .nav {
   background-color: #1a1a2e;
 }
 
+body.dark .logo {
+  filter: invert(1) brightness(2);
+}
+
 body.dark .menu li a,
 body.dark .nav-actions li a {
   color: #f0f0f0;
@@ -666,6 +670,54 @@ body.dark .page-input {
   background-color: #1e1e30;
   color: #f0f0f0;
   border-color: #333;
+}
+
+body.dark .course-details {
+  background-color: #1e1e30;
+}
+
+body.dark .course-details h1,
+body.dark .course-details h2,
+body.dark .course-details p,
+body.dark .course-details li {
+  color: #f0f0f0;
+}
+
+body.dark .course-card {
+  background-color: #1e1e30;
+  border-color: #333;
+}
+
+body.dark .course-card-row span {
+  color: #f0f0f0;
+}
+
+body.dark .hero-right {
+  background-color: #1e1e30;
+}
+
+body.dark .hero-right h2 {
+  color: #f0f0f0;
+}
+
+body.dark .playlist-item {
+  background-color: #2a2a40;
+}
+
+body.dark .playlist-item p {
+  color: #f0f0f0;
+}
+
+body.dark .hero-left h3 {
+  color: #f0f0f0;
+}
+
+body.dark .similar-courses h2 {
+  color: #f0f0f0;
+}
+
+body.dark #locked {
+  background-color: #1a1a2e !important;
 }
 
 /* ════════════════════════

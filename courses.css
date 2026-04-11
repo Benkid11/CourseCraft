@@ -814,6 +814,10 @@ body.dark .nav {
   background-color: #1a1a2e;
 }
 
+body.dark .logo {
+  filter: invert(1) brightness(2);
+}
+
 body.dark .menu li a,
 body.dark .nav-actions li a {
   color: #f0f0f0;
