@@ -790,6 +790,127 @@ input::placeholder {
   transform: translateY(-8px) rotate(-45deg);
 }
 
+#darkModeBtn {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+#darkModeBtn:hover {
+  border-color: #e8513a;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #0f0f1a;
+  color: #f0f0f0;
+}
+
+body.dark .nav {
+  background-color: #1a1a2e;
+}
+
+body.dark .menu li a,
+body.dark .nav-actions li a {
+  color: #f0f0f0;
+}
+
+body.dark .card {
+  background-color: #1e1e30;
+  color: #f0f0f0;
+}
+
+body.dark .card h3,
+body.dark .card p {
+  color: #f0f0f0;
+}
+
+body.dark .other-courses-card {
+  background-color: #1e1e30;
+}
+
+body.dark .course-content h3 {
+  color: #f0f0f0;
+}
+
+body.dark .dropdown {
+  background-color: #1e1e30;
+}
+
+body.dark .dropdown li a {
+  color: #f0f0f0;
+}
+
+body.dark .profile-dropdown {
+  background-color: #1e1e30;
+}
+
+body.dark .profile-dropdown a {
+  color: #f0f0f0;
+}
+
+body.dark .sort,
+body.dark .search-box {
+  background-color: #1e1e30;
+  color: #f0f0f0;
+  border-color: #333;
+}
+
+body.dark .sort-dropdown {
+  background-color: #1e1e30;
+}
+
+body.dark .sort-dropdown li a {
+  color: #f0f0f0;
+}
+
+body.dark #standard-classes,
+body.dark .top h2,
+body.dark .similar-courses h2,
+body.dark .logo-text {
+  color: #f0f0f0;
+}
+
+body.dark .course-list ul li a {
+  background-color: #1e1e30;
+  color: #f0f0f0;
+  box-shadow: none;
+}
+
+body.dark .hero {
+  background-color: #1a1a2e;
+}
+
+body.dark .hero-text h1 {
+  color: #f0f0f0;
+}
+
+body.dark .breadcrumb,
+body.dark .breadcrumb a {
+  color: #aaa;
+}
+
+body.dark .search {
+  color: #f0f0f0;
+  background-color: #1e1e30;
+}
+
+body.dark .page-btn,
+body.dark .page-number {
+  background-color: #1e1e30;
+  color: #f0f0f0;
+}
+
+body.dark .page-input {
+  background-color: #1e1e30;
+  color: #f0f0f0;
+  border-color: #333;
+}
+
 /* TABLET */
 @media (max-width: 1024px) {
   .card-grid {
