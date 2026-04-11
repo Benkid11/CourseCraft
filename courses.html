@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>courses</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="courses.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -14,17 +15,18 @@
     <!-- navbar -->
 
     <div class="nav">
-      <a href="index.html"
-        ><img src="images/Logo (1).png" alt="Logo" class="logo"
-      /></a>
+
+      <button id="darkModeBtn" title="Toggle dark mode">🌙</button>
+
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
 
       <ul class="menu">
         <li><a href="#">Shop</a></li>
 
         <li class="has-dropdown">
-          <a href="#"
-            >For Kindergarten <img src="images/down arrow.png" alt=""
-          /></a>
+          <a href="#">For Kindergarten <img src="images/down arrow.png" alt="" /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
             <li><a href="#">English</a></li>
@@ -33,9 +35,7 @@
         </li>
 
         <li class="has-dropdown">
-          <a href="#"
-            >For High School <img src="images/down arrow.png" alt=""
-          /></a>
+          <a href="#">For High School <img src="images/down arrow.png" alt="" /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
             <li><a href="#">English</a></li>
@@ -53,29 +53,36 @@
         </li>
 
         <li class="has-dropdown">
-          <a href="#">Courses <img src="images/down arrow.png" alt="" /></a>
-          <ul class="dropdown">
-            <li><a href="#">Math</a></li>
-            <li><a href="#">English</a></li>
-            <li><a href="#">Science</a></li>
-          </ul>
+          <a href="courses.html">Courses </a>
         </li>
       </ul>
 
       <ul class="nav-actions">
         <li>
-          <a href="#">Cart (0)</a>
+          <a href="#">Cart (<span id="cartCount">0</span>)</a>
           <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
         </li>
-        <li>
+        <li id="desktopProfileBtn">
           <a href="#">My Account</a>
-          <img
-            src="images/account image.png"
-            alt="account"
-            class="account-icon"
-          />
+          <img src="images/account image.png" alt="account" class="account-icon" />
         </li>
       </ul>
+
+      <div class="mobile-nav-actions">
+        <div class="mobile-profile" id="mobileProfileBtn">
+          <img src="images/account image.png" alt="account" class="account-icon" />
+        </div>
+        <div id="menuToggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </div>
     </div>
 
     <div id="container">
@@ -84,7 +91,8 @@
 
       <section class="hero">
         <div class="hero-text">
-          <p class="breadcrumb"> <span>Home</span> | <span>Courses</span></p>
+          <p class="breadcrumb"> <a href="index.html"><span>Home</span></a> | <a href="courses.html" class="active"><span>Courses</span></a>
+          </p>
           <h1>
             Eduvi Courses <br />
             For All Standards
@@ -121,7 +129,7 @@
             Standard 1 is a foundation Standard that reflects 7 important
             concepts...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -131,7 +139,7 @@
             Standard 2 builds on the foundations of Standard 1 and includes
             requirements...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -141,7 +149,7 @@
             Standard 3 of the Aged Care Quality Standards applies to all
             services delivering personal...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -151,7 +159,7 @@
             Standard 4 of the Aged Care Quality Standards focuses on services
             and supports...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -161,7 +169,7 @@
             Standard 5 Learning Resources. Learning Resources ensure that the
             school has the...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -171,7 +179,7 @@
             Standard 6 requires an organisation to have a system to resolve
             complaints...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -181,7 +189,7 @@
             Standard 7 Blood Management mandates that leaders of health service
             organisations...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -191,7 +199,7 @@
             Standard 8 Course from NCERT Solutions help students to
             understand...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -201,7 +209,7 @@
             Standard 9 Learning Resources. Learning Resources ensure that the
             school has the...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
 
         <div class="card">
@@ -210,7 +218,7 @@
           <p>
             O- Level requires an organisation to have a system to resolve complaints...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
         </div>
         
         <div class="card">
@@ -220,7 +228,7 @@
             A- Level Blood Management mandates that leaders of health service
             organisations...
           </p>
-          <a href="#">Class Details</a>
+          <a href="courses-detail.html">Class Details</a>
       </div>
 
     </div>
@@ -250,13 +258,403 @@
             </div>
           </form>
 
-        <div></div>
-          
         </div>
 
+        <div id="other-courses">
+
+          <!-- CARD 1 -->
+          <div class="other-courses-card">
+            <img src="images/Image.png" class="course-img">
+
+            <div class="course-content">
+              <h3>The Three Musketeers</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$40.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="other-courses-card">
+            <img src="images/Image (1).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Introduction to Mathematics</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$47.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+              <!-- CARD 3 -->
+          <div class="other-courses-card">
+            <img src="images/Image (2).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Basic English Grammar</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$35.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+              <!-- CARD 4 -->
+          <div class="other-courses-card">
+            <img src="images/Image (3).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Science Fundamentals</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$45.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+              <!-- CARD 5 -->
+          <div class="other-courses-card">
+            <img src="images/Image (4).png" class="course-img">
+
+            <div class="course-content">
+              <h3>History & Geography</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$30.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+            <!-- CARD 6 -->
+          <div class="other-courses-card">
+            <img src="images/Image (5).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Computer Basics</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$40.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+            <!-- CARD 7 -->
+          <div class="other-courses-card">
+            <img src="images/Image (6).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Introduction to Biology</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$46.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+            <!-- CARD 8 -->
+          <div class="other-courses-card">
+            <img src="images/Image (7).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Art & Design</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$20.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+            <!-- CARD 9 -->
+          <div class="other-courses-card">
+            <img src="images/Image (8).png" class="course-img">
+
+            <div class="course-content">
+              <h3>French Language</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$55.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+
+            <!-- CARD 10 -->
+          <div class="other-courses-card">
+            <img src="images/Image (9).png" class="course-img">
+
+            <div class="course-content">
+              <h3>Physics & Chemistry</h3>
+
+              <div class="stars">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+                <img src="images/star.png">
+              </div>
+
+              <p>$48.00</p>
+
+              <div class="cart">
+                <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
+              </div>
+            </div>
+          </div>
+        </div>  
+
+        <div class="pagination">
+          <button class="page-btn">&larr;</button>
+
+          <span>Page</span>
+
+          <input type="number" min="1" max="13" value="1" class="page-input">
+
+          <span>of 13</span>
+
+          <button class="page-btn">&rarr;</button>
+        </div>
+      </div>
+    </section>
+
+            
+      <div class="subscribe">
+        <h2>
+          Subscribe For Get Update <br />
+          Every New Courses
+        </h2>
+
+        <!--floating images-->
+        <img src="images/sub1.png" alt="" class="img1" />
+        <img src="images/sub2.png" alt="" class="img2" />
+        <img src="images/sub3.png" alt="" class="img3" />
+        <img src="images/sub4.png" alt="" class="img4" />
+        <img src="images/sub5.png" alt="" class="img5" />
+        <img src="images/sub6.png" alt="" class="img6" />
+
+        <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+
+        <div class="subscribe-form">
+          <input type="email" placeholder="enter your email" />
+          <button>Subscribe</button>
+        </div>
       </div>
 
-    </section>
+    <button id="backToTop" title="Back to top">↑</button>
+
+
+    <script>
+      const menuBtn = document.getElementById("menuToggle");
+      const menu = document.querySelector(".menu");
+      const profileBtn = document.getElementById("mobileProfileBtn");
+      const profileDropdown = document.getElementById("profileDropdown");
+      const desktopProfileBtn = document.getElementById("desktopProfileBtn");
+
+desktopProfileBtn.onclick = function (e) {
+  e.stopPropagation();
+  profileDropdown.classList.toggle("open");
+  menu.classList.remove("active");
+};
+
+      menuBtn.onclick = function () {
+      menu.classList.toggle("active");
+      menuBtn.classList.toggle("open");
+      profileDropdown.classList.remove("open");
+    };
+
+    let cartCount = 0;
+    const cartCountEl = document.getElementById("cartCount");
+    const cartBags = document.querySelectorAll(".card-bag");
+
+    cartBags.forEach(function (bag) {
+      bag.onclick = function () {
+        cartCount++;
+        cartCountEl.textContent = cartCount;
+
+        // small bounce animation on the bag
+        bag.style.transform = "scale(1.4)";
+        setTimeout(function () {
+          bag.style.transform = "scale(1)";
+        }, 200);
+      };
+    });
+
+      profileBtn.onclick = function (e) {
+        e.stopPropagation();
+        profileDropdown.classList.toggle("open");
+        menu.classList.remove("active");
+      };
+
+      document.addEventListener("click", function () {
+        profileDropdown.classList.remove("open");
+      });
+
+      const backToTop = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+
+      backToTop.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+
+      const allCards = document.querySelectorAll(".other-courses-card");
+      const prevBtn = document.querySelectorAll(".page-btn")[0];
+      const nextBtn = document.querySelectorAll(".page-btn")[1];
+      const pageInput = document.querySelector(".page-input");
+      const cardsPerPage = 4;
+      let currentPage = 1;
+      const totalPages = Math.ceil(allCards.length / cardsPerPage);
+
+      // update the "of X" text to match actual card count
+      document.querySelector(".pagination span:last-of-type").textContent = "of " + totalPages;
+
+    function showPage(page) {
+      // clamp page between 1 and totalPages
+      if (page < 1) page = 1;
+      if (page > totalPages) page = totalPages;
+      currentPage = page;
+
+      // show only cards for this page
+      allCards.forEach(function (card, index) {
+        const start = (currentPage - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+        card.style.display = (index >= start && index < end) ? "flex" : "none";
+      });
+
+      // update the input
+      pageInput.value = currentPage;
+
+      // disable buttons at limits
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+      prevBtn.onclick = function () {
+        showPage(currentPage - 1);
+      };
+
+      nextBtn.onclick = function () {
+        showPage(currentPage + 1);
+      };
+
+      pageInput.onchange = function () {
+        showPage(parseInt(pageInput.value));
+      };
+
+      // initialize
+      showPage(1);
+
+      const darkModeBtn = document.getElementById("darkModeBtn");
+
+      // remember preference when page reloads
+      if (localStorage.getItem("darkMode") === "on") {
+        document.body.classList.add("dark");
+        darkModeBtn.textContent = "☀️";
+      }
+
+      darkModeBtn.onclick = function () {
+        document.body.classList.toggle("dark");
+        const isDark = document.body.classList.contains("dark");
+        darkModeBtn.textContent = isDark ? "☀️" : "🌙";
+        localStorage.setItem("darkMode", isDark ? "on" : "off");
+      };
+    </script>
 
 
   </body>
