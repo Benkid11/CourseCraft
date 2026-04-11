@@ -15,11 +15,9 @@
     <!-- navbar -->
 
     <div class="nav">
-      <a href="index.html"
-        ><img src="images/Logo (1).png" alt="Logo" class="logo"
-      /></a>
-
-      <div class="menu-toggle">☰</div>
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
 
       <ul class="menu">
         <li><a href="#">Shop</a></li>
@@ -65,11 +63,6 @@
         </li>
       </ul>
 
-      <div class="profile-dropdown" id="profileDropdown">
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
-      </div>
-
       <ul class="nav-actions">
         <li>
           <a href="#">Cart (0)</a>
@@ -84,6 +77,22 @@
           />
         </li>
       </ul>
+
+      <div class="mobile-nav-actions">
+        <div class="mobile-profile" id="mobileProfileBtn">
+          <img
+            src="images/account image.png"
+            alt="account"
+            class="account-icon"
+          />
+        </div>
+        <div id="menuToggle">☰</div>
+      </div>
+
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </div>
     </div>
 
     <div id="container">
@@ -91,7 +100,7 @@
       <section class="hero">
         <div class="hero-left">
           <p class="breadcrumb">
-            <span>Home</span> |
+            <a href="index.html"><span>Home</span></a> |
             <a href="courses.html"><span>Courses</span></a> |
             <a href="courses-detail.html" class="active"
               ><span>Course Details</span></a
@@ -164,39 +173,36 @@
         <div class="course-details">
           <h2>Course Details</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis consectetur adipiscing elit. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-            suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis consectetur adipiscing elit.
+            This course is designed to help Standard 3 students build a strong
+            foundation in Mathematics. Topics covered include addition,
+            subtraction, multiplication, division, fractions, and basic
+            geometry. Each lesson is broken down into simple, easy-to-follow
+            episodes with real-life examples to make learning fun and effective.
           </p>
 
           <h2>Certification</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis consectetur adipiscing elit.
+            Upon completing all lessons and passing the quizzes, students will
+            receive an Eduvi certificate of completion. This certificate
+            validates the student's understanding of Standard 3 Mathematics and
+            can be shared with teachers or parents as proof of progress.
           </p>
 
           <h2>Who this course is for</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis consectetur adipiscing elit.
+            This course is designed for Standard 3 students aged 8–10 who want
+            to strengthen their Math skills. It is also helpful for parents who
+            want to support their child's learning at home, and for teachers
+            looking for structured lesson material.
           </p>
 
           <h2>What you'll learn in this course:</h2>
           <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+            <li>How to add and subtract numbers up to 1000</li>
+            <li>How to multiply and divide using simple methods</li>
+            <li>Understanding fractions and how to use them</li>
+            <li>Basic shapes and measurements in geometry</li>
+            <li>How to solve simple word problems confidently</li>
           </ul>
         </div>
 
@@ -397,12 +403,25 @@
       `
 
       <script>
-        const btn = document.querySelector(".menu-toggle");
+        const menuBtn = document.getElementById("menuToggle");
         const menu = document.querySelector(".menu");
+        const profileBtn = document.getElementById("mobileProfileBtn");
+        const profileDropdown = document.getElementById("profileDropdown");
 
-        btn.onclick = function () {
+        menuBtn.onclick = function () {
           menu.classList.toggle("active");
+          profileDropdown.classList.remove("open");
         };
+
+        profileBtn.onclick = function (e) {
+          e.stopPropagation();
+          profileDropdown.classList.toggle("open");
+          menu.classList.remove("active");
+        };
+
+        document.addEventListener("click", function () {
+          profileDropdown.classList.remove("open");
+        });
       </script>
     </div>
   </body>
