@@ -70,7 +70,7 @@
           <a href="#">Cart (0)</a>
           <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
         </li>
-        <li>
+        <li id="desktopProfileBtn">
           <a href="#">My Account</a>
           <img
             src="images/account image.png"
@@ -412,6 +412,13 @@
         const menu = document.querySelector(".menu");
         const profileBtn = document.getElementById("mobileProfileBtn");
         const profileDropdown = document.getElementById("profileDropdown");
+        const desktopProfileBtn = document.getElementById("desktopProfileBtn");
+
+        desktopProfileBtn.onclick = function (e) {
+          e.stopPropagation();
+          profileDropdown.classList.toggle("open");
+          menu.classList.remove("active");
+        };
 
         menuBtn.onclick = function () {
           menu.classList.toggle("active");
