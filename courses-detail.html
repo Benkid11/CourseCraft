@@ -399,8 +399,7 @@
         </div>
       </div>
 
-      <div class="footer"></div>
-      `
+      <button id="backToTop" title="Back to top">↑</button>
 
       <script>
         const menuBtn = document.getElementById("menuToggle");
@@ -422,6 +421,20 @@
         document.addEventListener("click", function () {
           profileDropdown.classList.remove("open");
         });
+
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+          } else {
+            backToTop.style.display = "none";
+          }
+        });
+
+        backToTop.onclick = function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
       </script>
     </div>
   </body>
