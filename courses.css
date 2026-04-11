@@ -1105,6 +1105,85 @@ body.dark .page-input {
   display: block;
 }
 
+/* --- Dark mode missing fixes --- */
+
+/* Navbar hover */
+body.dark .menu li a:hover,
+body.dark .nav-actions li a:hover {
+  color: #e8513a;
+}
+
+/* Dropdown hover */
+body.dark .dropdown li a:hover {
+  color: #e8513a;
+  background-color: #2a2a40;
+}
+
+/* Sort dropdown hover */
+body.dark .sort-dropdown li a:hover {
+  color: #7b61ff;
+  background-color: #2a2a40;
+}
+
+/* Profile dropdown hover */
+body.dark .profile-dropdown a:hover {
+  color: #e8513a;
+  background-color: #2a2a40;
+}
+
+/* Breadcrumb hover */
+body.dark .breadcrumb span:hover,
+body.dark .breadcrumb a:hover {
+  color: #e8513a;
+}
+
+/* Breadcrumb active link */
+body.dark .breadcrumb a.active {
+  color: #e8513a;
+}
+
+/* Course list hover */
+body.dark .course-list ul li a:hover {
+  background-color: #e8513a;
+  color: white;
+}
+
+/* Card Details link */
+body.dark .card-grid a {
+  color: #c084fc;
+  border-color: rgba(192, 132, 252, 0.3);
+}
+
+body.dark .card-grid a:hover {
+  background-color: #9c4df4;
+  color: white;
+}
+
+/* Hamburger lines */
+body.dark .hamburger span {
+  background-color: #f0f0f0;
+}
+
+/* Dark mode button border */
+body.dark #darkModeBtn {
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+/* Pagination text */
+body.dark .pagination span {
+  color: #f0f0f0;
+}
+
+/* Mobile menu open background */
+body.dark .menu.active {
+  background-color: #1a1a2e;
+}
+
+body.dark .menu.active li a {
+  color: #f0f0f0;
+}
+
 #backToTop {
   position: fixed;
   bottom: 30px;
