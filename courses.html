@@ -15,6 +15,8 @@
     <!-- navbar -->
 
     <div class="nav">
+
+      
       <a href="index.html">
         <img src="images/Logo (1).png" alt="Logo" class="logo" />
       </a>
@@ -61,7 +63,7 @@
 
       <ul class="nav-actions">
         <li>
-          <a href="#">Cart (0)</a>
+          <a href="#">Cart (<span id="cartCount">0</span>)</a>
           <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
         </li>
         <li>
@@ -293,7 +295,7 @@
             <img src="images/Image (1).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Introduction to Mathematics</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -303,7 +305,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$47.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -316,7 +318,7 @@
             <img src="images/Image (2).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Basic English Grammar</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -326,7 +328,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$35.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -339,7 +341,7 @@
             <img src="images/Image (3).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Science Fundamentals</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -349,7 +351,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$45.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -362,7 +364,7 @@
             <img src="images/Image (4).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>History & Geography</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -372,7 +374,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$30.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -385,7 +387,7 @@
             <img src="images/Image (5).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Computer Basics</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -408,7 +410,7 @@
             <img src="images/Image (6).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Introduction to Biology</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -418,7 +420,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$46.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -431,7 +433,7 @@
             <img src="images/Image (7).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Art & Design</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -441,7 +443,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$20.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -454,7 +456,7 @@
             <img src="images/Image (8).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>French Language</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -464,7 +466,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$55.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -477,7 +479,7 @@
             <img src="images/Image (9).png" class="course-img">
 
             <div class="course-content">
-              <h3>The Three Musketeers</h3>
+              <h3>Physics & Chemistry</h3>
 
               <div class="stars">
                 <img src="images/star.png">
@@ -487,7 +489,7 @@
                 <img src="images/star.png">
               </div>
 
-              <p>$40.00</p>
+              <p>$48.00</p>
 
               <div class="cart">
                 <img src="images/shopping bag.png" alt="add to cart" class="card-bag">
@@ -548,6 +550,23 @@
       profileDropdown.classList.remove("open");
     };
 
+    let cartCount = 0;
+    const cartCountEl = document.getElementById("cartCount");
+    const cartBags = document.querySelectorAll(".card-bag");
+
+    cartBags.forEach(function (bag) {
+      bag.onclick = function () {
+        cartCount++;
+        cartCountEl.textContent = cartCount;
+
+        // small bounce animation on the bag
+        bag.style.transform = "scale(1.4)";
+        setTimeout(function () {
+          bag.style.transform = "scale(1)";
+        }, 200);
+      };
+    });
+
       profileBtn.onclick = function (e) {
         e.stopPropagation();
         profileDropdown.classList.toggle("open");
@@ -571,6 +590,53 @@
       backToTop.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
       };
+
+      const allCards = document.querySelectorAll(".other-courses-card");
+      const prevBtn = document.querySelectorAll(".page-btn")[0];
+      const nextBtn = document.querySelectorAll(".page-btn")[1];
+      const pageInput = document.querySelector(".page-input");
+      const cardsPerPage = 4;
+      let currentPage = 1;
+      const totalPages = Math.ceil(allCards.length / cardsPerPage);
+
+      // update the "of X" text to match actual card count
+      document.querySelector(".pagination span:last-of-type").textContent = "of " + totalPages;
+
+    function showPage(page) {
+      // clamp page between 1 and totalPages
+      if (page < 1) page = 1;
+      if (page > totalPages) page = totalPages;
+      currentPage = page;
+
+      // show only cards for this page
+      allCards.forEach(function (card, index) {
+        const start = (currentPage - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+        card.style.display = (index >= start && index < end) ? "flex" : "none";
+      });
+
+      // update the input
+      pageInput.value = currentPage;
+
+      // disable buttons at limits
+      prevBtn.disabled = currentPage === 1;
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+      prevBtn.onclick = function () {
+        showPage(currentPage - 1);
+      };
+
+      nextBtn.onclick = function () {
+        showPage(currentPage + 1);
+      };
+
+      pageInput.onchange = function () {
+        showPage(parseInt(pageInput.value));
+      };
+
+      // initialize
+      showPage(1);
     </script>
 
 
