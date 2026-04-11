@@ -543,9 +543,10 @@
       const profileDropdown = document.getElementById("profileDropdown");
 
       menuBtn.onclick = function () {
-        menu.classList.toggle("active");
-        profileDropdown.classList.remove("open");
-      };
+      menu.classList.toggle("active");
+      menuBtn.classList.toggle("open");
+      profileDropdown.classList.remove("open");
+    };
 
       profileBtn.onclick = function (e) {
         e.stopPropagation();
