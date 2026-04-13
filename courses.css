@@ -437,6 +437,9 @@ input::placeholder {
   font-weight: 500;
   white-space: nowrap;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .search-btn:hover {
