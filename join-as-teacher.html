@@ -10,12 +10,89 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <img src="images/menu.png" alt="menu" class="menu-icon">
-            <span class="platform-title">Eduvi E-learning Platform (Community)</span>
+        <!-- navbar -->
+
+    <div class="nav">
+      <button id="darkModeBtn" title="Toggle dark mode">🌙</button>
+
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
+
+      <ul class="menu">
+        <li><a href="#">Shop</a></li>
+
+        <li class="has-dropdown">
+          <a href="#"
+            >For Kindergarten <img src="images/down arrow.png" alt=""
+          /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#"
+            >For High School <img src="images/down arrow.png" alt=""
+          /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#">For College <img src="images/down arrow.png" alt="" /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="courses.html">Courses </a>
+        </li>
+      </ul>
+
+      <ul class="nav-actions">
+        <li>
+          <a href="#">Cart (0)</a>
+          <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
+        </li>
+        <li id="desktopProfileBtn">
+          <a href="#">My Account</a>
+          <img
+            src="images/account image.png"
+            alt="account"
+            class="account-icon"
+          />
+        </li>
+      </ul>
+
+      <div class="mobile-nav-actions">
+        <div class="mobile-profile" id="mobileProfileBtn">
+          <img
+            src="images/account image.png"
+            alt="account"
+            class="account-icon"
+          />
         </div>
-    </nav>
+        <div id="menuToggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </div>
+    </div>
 
     <!-- Main Navigation -->
     <header class="main-header">

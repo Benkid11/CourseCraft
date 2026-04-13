@@ -8,19 +8,21 @@
 </head>
 <body>
 
- <!-- navbar -->
+    <!-- navbar -->
 
     <div class="nav">
-      <a href="index.html"
-        ><img src="images/Logo (1).png" alt="Logo" class="logo"
-      /></a>
+      <button id="darkModeBtn" title="Toggle dark mode">🌙</button>
+
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
 
       <ul class="menu">
         <li><a href="#">Shop</a></li>
 
         <li class="has-dropdown">
           <a href="#"
-            >For Kindergarten <img src="images/down arrow.png" alt=""
+            >For Kindergarten <img src="down arrow.png" alt=""
           /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
@@ -31,7 +33,7 @@
 
         <li class="has-dropdown">
           <a href="#"
-            >For High School <img src="images/down arrow.png" alt=""
+            >For High School <img src="down arrow.png" alt=""
           /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
@@ -41,7 +43,7 @@
         </li>
 
         <li class="has-dropdown">
-          <a href="#">For College <img src="images/down arrow.png" alt="" /></a>
+          <a href="#">For College <img src="down arrow.png" alt="" /></a>
           <ul class="dropdown">
             <li><a href="#">Math</a></li>
             <li><a href="#">English</a></li>
@@ -50,24 +52,19 @@
         </li>
 
         <li class="has-dropdown">
-          <a href="#">Courses <img src="images/down arrow.png" alt="" /></a>
-          <ul class="dropdown">
-            <li><a href="#">Math</a></li>
-            <li><a href="#">English</a></li>
-            <li><a href="#">Science</a></li>
-          </ul>
+          <a href="courses.html">Courses </a>
         </li>
       </ul>
 
       <ul class="nav-actions">
         <li>
           <a href="#">Cart (0)</a>
-          <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
+          <img src="shopping cart.png" alt="cart" class="cart-icon" />
         </li>
-        <li>
+        <li id="desktopProfileBtn">
           <a href="#">My Account</a>
           <img
-            src="images/account image.png"
+            src="account image.png"
             alt="account"
             class="account-icon"
           />
@@ -80,6 +77,7 @@
 <!-- HERO -->
 <section class="hero">
   <h2>Our Pre-ready Pricing Packages</h2>
+  <img src="images/Group.png" alt="">
 </section>
 
 <!-- PRICING TITLE -->
@@ -136,14 +134,27 @@
 </section>
 
 <!-- SUBSCRIBE -->
-<section class="subscribe">
-  <h2>Subscribe For Get Update Every New Courses</h2>
-  <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
-  <div class="input-box">
-    <input type="email" placeholder="enter your email">
-    <button>Subscribe</button>
-  </div>
-</section>
+ <div class="subscribe">
+        <h2>
+          Subscribe For Get Update <br />
+          Every New Courses
+        </h2>
+
+        <!--floating images-->
+        <img src="images/sub1.png" alt="" class="img1" />
+        <img src="images/sub2.png" alt="" class="img2" />
+        <img src="images/sub3.png" alt="" class="img3" />
+        <img src="images/sub4.png" alt="" class="img4" />
+        <img src="images/sub5.png" alt="" class="img5" />
+        <img src="images/sub6.png" alt="" class="img6" />
+
+        <p>20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+
+        <div class="subscribe-form">
+          <input type="email" placeholder="enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
 
 <!-- FOOTER -->
 <footer class="footer">
