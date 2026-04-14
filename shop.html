@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eduvi – Online Book Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --primary:   #7B5EA7;
+    --primary-light: #9b7dc8;
+    --orange:    #F97316;
+    --pink:      #FF6B6B;
+    --green:     #22C55E;
+    --dark:      #1E1B4B;
+    --dark-navy: #1a1a3e;
+    --text:      #374151;
+    --text-light:#6B7280;
+    --bg:        #F5F5F8;
+    --bg-card:   #FFFFFF;
+    --border:    #E5E7EB;
+    --radius:    12px;
+    --shadow:    0 4px 20px rgba(0,0,0,.07);
+    --shadow-lg: 0 8px 40px rgba(123,94,167,.14);
+    --transition:all .25s ease;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+  img  { max-width: 100%; display: block; }
+  a    { text-decoration: none; color: inherit; }
+  ul   { list-style: none; }
+
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 26px; border-radius: 50px; font-weight: 700; font-size: .875rem; cursor: pointer; border: none; transition: var(--transition); }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(123,94,167,.3); }
+  .btn-orange  { background: var(--orange); color: #fff; }
+  .btn-orange:hover { filter: brightness(1.08); transform: translateY(-2px); }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    animation: slideDown .4s ease;
+  }
+  @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo   { display: flex; align-items: center; gap: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--dark); }
+  .nav-logo-icon { width: 32px; height: 32px; background: var(--orange); border-radius: 8px; display: grid; place-items: center; }
+  .nav-links  { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-size: .875rem; font-weight: 600; color: var(--text); transition: var(--transition); display: flex; align-items: center; gap: 4px; }
+  .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+  .nav-actions { display: flex; align-items: center; gap: 16px; }
+  .nav-cart { position: relative; width: 36px; height: 36px; border-radius: 50%; background: #FFF3E8; display: grid; place-items: center; cursor: pointer; font-size: 1rem; transition: var(--transition); }
+  .nav-cart:hover { background: var(--orange); }
+  .nav-cart-badge { position: absolute; top: -4px; right: -4px; width: 16px; height: 16px; background: var(--primary); border-radius: 50%; font-size: .6rem; font-weight: 800; color: #fff; display: grid; place-items: center; }
+  .nav-account { display: flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 700; color: var(--text); cursor: pointer; }
+
+  /* ─── BREADCRUMB ─── */
+  .breadcrumb { padding: 14px 0; }
+  .breadcrumb-inner { font-size: .82rem; color: var(--text-light); }
+  .breadcrumb-inner a { color: var(--text-light); }
+  .breadcrumb-inner a:hover { color: var(--primary); }
+  .breadcrumb-inner span { color: var(--text); font-weight: 700; }
+
+  /* ─── HERO BANNER ─── */
+  .shop-hero { background: linear-gradient(135deg, #F0EEF8 0%, #E8E4F5 100%); border-radius: 16px; margin: 0 24px 32px; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; overflow: hidden; }
+  .shop-hero-text h1 { font-family: 'Poppins', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--dark); line-height: 1.2; }
+  .shop-hero-image { height: 140px; object-fit: contain; }
+
+  /* ─── SHOP LAYOUT ─── */
+  .shop-layout { display: grid; grid-template-columns: 280px 1fr; gap: 28px; padding-bottom: 60px; }
+
+  /* ─── SIDEBAR ─── */
+  .sidebar {}
+  .sidebar-section { margin-bottom: 32px; }
+  .sidebar-title { font-weight: 800; font-size: 1rem; color: var(--dark); margin-bottom: 14px; }
+  .sidebar-book { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 10px; padding: 12px; margin-bottom: 8px; box-shadow: var(--shadow); transition: var(--transition); cursor: pointer; }
+  .sidebar-book:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .sidebar-book-img { width: 48px; height: 64px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: #eee; }
+  .sidebar-book-info {}
+  .stars { color: var(--yellow, #FBBF24); font-size: .8rem; margin-bottom: 2px; }
+  .sidebar-book-title { font-size: .82rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .sidebar-book-price { font-size: .85rem; font-weight: 800; color: var(--orange); margin-top: 2px; }
+  .see-more { color: var(--primary); font-size: .85rem; font-weight: 700; cursor: pointer; display: inline-block; margin-top: 6px; transition: var(--transition); }
+  .see-more:hover { color: var(--orange); }
+
+  /* ─── MAIN CONTENT ─── */
+  .shop-main {}
+
+  /* Filter tabs */
+  .filter-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .filter-tab { padding: 8px 22px; border-radius: 50px; font-weight: 700; font-size: .85rem; border: 1.5px solid var(--border); background: #fff; color: var(--text-light); cursor: pointer; transition: var(--transition); }
+  .filter-tab.active { background: var(--orange); color: #fff; border-color: var(--orange); }
+  .filter-tab:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+
+  /* Search + sort bar */
+  .search-bar { display: flex; gap: 12px; margin-bottom: 20px; align-items: center; }
+  .search-input-wrap { flex: 1; background: #fff; border: 1.5px solid var(--border); border-radius: 50px; display: flex; align-items: center; padding: 8px 16px; gap: 8px; transition: var(--transition); }
+  .search-input-wrap:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(123,94,167,.1); }
+  .search-input-wrap input { flex: 1; border: none; outline: none; font-size: .875rem; font-family: 'Nunito', sans-serif; color: var(--text); }
+  .search-input-wrap input::placeholder { color: var(--text-light); }
+  .search-icon-btn { width: 32px; height: 32px; background: var(--primary); border-radius: 50%; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; transition: var(--transition); }
+  .search-icon-btn:hover { background: var(--primary-light); }
+  .sort-select { background: #fff; border: 1.5px solid var(--border); border-radius: 50px; padding: 9px 20px; font-size: .85rem; font-family: 'Nunito', sans-serif; color: var(--text); outline: none; cursor: pointer; min-width: 160px; }
+
+  /* Books grid */
+  .books-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-bottom: 28px; }
+  .book-card { background: #fff; border-radius: var(--radius); overflow: hidden; border: 1.5px solid var(--border); transition: var(--transition); cursor: pointer; }
+  .book-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
+  .book-cover { height: 180px; display: flex; align-items: center; justify-content: center; background: var(--bg); overflow: hidden; }
+  .book-cover img { height: 160px; object-fit: cover; transition: transform .3s ease; }
+  .book-card:hover .book-cover img { transform: scale(1.05); }
+  .book-info { padding: 12px 14px; }
+  .book-title { font-weight: 800; font-size: .875rem; color: var(--dark); margin-bottom: 4px; }
+  .book-meta  { display: flex; align-items: center; justify-content: space-between; }
+  .book-price { font-weight: 800; color: var(--orange); font-size: .9rem; }
+
+  /* Pagination */
+  .pagination { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 0 20px; }
+  .page-btn { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--border); background: #fff; display: grid; place-items: center; cursor: pointer; font-weight: 700; transition: var(--transition); font-size: .85rem; }
+  .page-btn:hover, .page-btn.active-page { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .page-info { font-size: .875rem; color: var(--text-light); }
+  .page-info strong { color: var(--dark); }
+
+  /* ─── SUBSCRIBE ─── */
+  .subscribe-section { background: #1a1a3e; padding: 70px 0; position: relative; overflow: hidden; margin-top: 20px; }
+  .subscribe-inner { text-align: center; position: relative; z-index: 2; }
+  .sub-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 10px; }
+  .sub-desc  { color: rgba(255,255,255,.55); font-size: .9rem; margin-bottom: 28px; }
+  .sub-form  { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; background: rgba(255,255,255,.1); border-radius: 50px; padding: 6px 6px 6px 20px; border: 1.5px solid rgba(255,255,255,.15); }
+  .sub-form input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: .9rem; font-family: 'Nunito', sans-serif; }
+  .sub-form input::placeholder { color: rgba(255,255,255,.4); }
+  .sub-avatars { position: absolute; top: 50%; transform: translateY(-50%); }
+  .sub-avatars.left  { left: 40px; }
+  .sub-avatars.right { right: 40px; }
+  .sub-avatar { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.15); border: 3px solid rgba(255,255,255,.2); overflow: hidden; margin: 14px 0; }
+  .sub-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ─── FOOTER ─── */
+  footer { background: #fff; border-top: 1px solid var(--border); padding: 48px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
+  .footer-brand p { font-size: .82rem; color: var(--text-light); line-height: 1.6; margin-top: 10px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 14px; }
+  .footer-social a { width: 30px; height: 30px; border-radius: 6px; background: var(--bg); display: grid; place-items: center; font-size: .85rem; color: var(--text-light); transition: var(--transition); }
+  .footer-social a:hover { background: var(--primary); color: #fff; }
+  .footer-col h4 { font-weight: 800; font-size: .9rem; color: var(--dark); margin-bottom: 14px; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col li a { font-size: .82rem; color: var(--text-light); transition: var(--transition); }
+  .footer-col li a:hover { color: var(--primary); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: .8rem; color: var(--text-light); }
+
+  /* Book cover colors */
+  .bc-blue   { background: linear-gradient(135deg,#667eea,#764ba2); }
+  .bc-orange { background: linear-gradient(135deg,#f7971e,#ffd200); }
+  .bc-red    { background: linear-gradient(135deg,#f953c6,#b91d73); }
+  .bc-teal   { background: linear-gradient(135deg,#11998e,#38ef7d); }
+  .bc-gray   { background: linear-gradient(135deg,#bdc3c7,#2c3e50); }
+  .bc-yellow { background: linear-gradient(135deg,#f7971e,#ffd200); }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon"><span>📚</span></div>
+        Eduvi
+      </a>
+      <ul class="nav-links">
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="#">For Kindergarten ▾</a></li>
+        <li><a href="#">For High School ▾</a></li>
+        <li><a href="#">For College ▾</a></li>
+        <li><a href="courses.html">Courses </a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="nav-cart">🛒<span class="nav-cart-badge">0</span></div>
+        <div class="nav-account">👤 My Account</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ BREADCRUMB ══════════════════════════════════════════ -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="#">Home</a> | <span>Shop</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SHOP HERO ════════════════════════════════════════════ -->
+<div class="shop-hero">
+  <div class="shop-hero-text">
+    <h1>Eduvi Online<br>Book Shop</h1>
+  </div>
+  <img class="shop-hero-image" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=360&q=80" alt="Books shelf" style="height:130px;object-fit:cover;border-radius:12px;width:280px;" />
+</div>
+
+<!-- ══ SHOP LAYOUT ══════════════════════════════════════════ -->
+<div class="container">
+  <div class="shop-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Popular Books</div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea,#764ba2);display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📘</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#f7971e,#ffd200);display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📙</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:#f0f0f0;display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📗</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <a class="see-more">See More</a>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">New Arrivals</div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#667eea,#764ba2);display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📘</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,#f7971e,#ffd200);display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📙</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <div class="sidebar-book">
+          <div style="width:48px;height:64px;border-radius:6px;overflow:hidden;flex-shrink:0;background:#f0f0f0;display:grid;place-items:center;">
+            <span style="font-size:1.5rem;">📗</span>
+          </div>
+          <div class="sidebar-book-info">
+            <div class="stars">★★★★★</div>
+            <div class="sidebar-book-title">The Three Musketeers, by Alexandre Dumas</div>
+            <div class="sidebar-book-price">$39.00</div>
+          </div>
+        </div>
+
+        <a class="see-more">See More</a>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="shop-main">
+      <!-- Filter tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active">All Books</button>
+        <button class="filter-tab">Kindergarten</button>
+        <button class="filter-tab">High School</button>
+        <button class="filter-tab">College</button>
+      </div>
+
+      <!-- Search + Sort -->
+      <div class="search-bar">
+        <div class="search-input-wrap">
+          <input type="text" placeholder="Search Class, Course, Book Name" />
+          <div class="search-icon-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+        </div>
+        <select class="sort-select">
+          <option>Sort by: Latest</option>
+          <option>Sort by: Price Low</option>
+          <option>Sort by: Price High</option>
+          <option>Sort by: Rating</option>
+        </select>
+      </div>
+
+      <!-- Books Grid -->
+      <div class="books-grid" id="booksGrid">
+
+        <!-- Row 1 -->
+        <div class="book-card">
+          <div class="book-cover bc-blue">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover bc-orange">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover bc-gray">
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="book-card">
+          <div class="book-cover bc-teal">
+            <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★☆</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover" style="background:#f7f7f7;">
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover bc-yellow">
+            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★☆</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="book-card">
+          <div class="book-cover bc-orange">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover bc-blue">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-card">
+          <div class="book-cover bc-gray">
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=160&q=80" alt="Book" />
+          </div>
+          <div class="book-info">
+            <div class="book-title">The Three Musketeers</div>
+            <div class="book-meta">
+              <span class="book-price">$40.00</span>
+              <span class="stars" style="font-size:.75rem;">★★★★★</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /books-grid -->
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn">‹</button>
+        <span class="page-info">Page <strong>5</strong> of <strong>80</strong></span>
+        <button class="page-btn">›</button>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ══ SUBSCRIBE ════════════════════════════════════════════ -->
+<section class="subscribe-section">
+  <div class="sub-avatars left">
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=1" alt="" /></div>
+    <div class="sub-avatar" style="margin-left:30px;"><img src="https://i.pravatar.cc/52?img=5" alt="" /></div>
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=9" alt="" /></div>
+  </div>
+  <div class="container">
+    <div class="subscribe-inner">
+      <h2 class="sub-title">Subscribe For Get Update<br>Every New Courses</h2>
+      <p class="sub-desc">20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+      <div class="sub-form">
+        <input type="email" placeholder="enter your email" />
+        <button class="btn btn-primary" style="border-radius:50px;padding:10px 24px;">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="sub-avatars right">
+    <div class="sub-avatar" style="margin-left:auto;"><img src="https://i.pravatar.cc/52?img=12" alt="" /></div>
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=20" alt="" /></div>
+    <div class="sub-avatar" style="margin-left:auto;"><img src="https://i.pravatar.cc/52?img=25" alt="" /></div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:10px;">
+          <div class="nav-logo-icon"><span>📚</span></div>
+          Eduvi
+        </a>
+        <p>© 2021 Eduvi.co<br><br>Eduvi is a registered trademark of Eduvi.co</p>
+        <div class="footer-social">
+          <a href="#">f</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#">Classroom courses</a></li>
+          <li><a href="#">Virtual classroom courses</a></li>
+          <li><a href="#">E-learning courses</a></li>
+          <li><a href="#">Video Courses</a></li>
+          <li><a href="#">Offline Courses</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Learners</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Transactions</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Teaching Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Professional Education</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Testimonial</a></li>
+          <li><a href="#">Programs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2021 Eduvi. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Filter tabs
+  document.querySelectorAll('.filter-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Scroll reveal for book cards
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, i * 60);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.book-card, .sidebar-book').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .4s ease, transform .4s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
