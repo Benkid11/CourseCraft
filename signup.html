@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <style>
+    .modal {
+      animation: slideUp 0.4s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- OVERLAY -->
+  <div class="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+
+    <!-- MODAL -->
+    <div class="modal bg-white w-full max-w-[900px] rounded-2xl shadow-xl flex flex-col md:flex-row overflow-hidden">
+
+      <!-- LEFT -->
+      <div class="hidden md:flex w-1/2 p-10 bg-gray-50 flex-col justify-center">
+        <img src="https://eduvifigma.netlify.app/img/icons/header__logo.svg" class="w-24 mb-6">
+
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">
+          Welcome to Eduvi Online Learning Platform
+        </h1>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="w-64 mx-auto">
+      </div>
+
+      <!-- RIGHT -->
+      <div class="w-full md:w-1/2 p-6 md:p-10 relative">
+
+        <!-- CLOSE BUTTON -->
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 text-xl">✕</button>
+
+
+        <button class="flex items-center justify-center border rounded-lg py-3 mb-4 w-full">
+          <span class="text-red-500 font-bold mr-2">G+</span>
+          Signup with google
+        </button>
+
+        <p class="text-center text-sm text-gray-400 mb-4">
+          Or signup with your email
+        </p>
+
+        <input type="text" placeholder="Full name"
+          class="border rounded-lg p-3 mb-3 w-full focus:ring-2 focus:ring-purple-500">
+
+        <input type="email" placeholder="Email"
+          class="border rounded-lg p-3 mb-3 w-full focus:ring-2 focus:ring-purple-500">
+
+        <!-- PASSWORD -->
+        <div class="relative mb-3">
+          <input id="signupPassword" type="password"
+            placeholder="Password"
+            class="border rounded-lg p-3 w-full pr-10 focus:ring-2 focus:ring-purple-500">
+
+          <span onclick="togglePassword('signupPassword', this)"
+            class="absolute right-3 top-3 cursor-pointer">👁</span>
+        </div>
+
+        <label class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+          <input type="checkbox" class="accent-purple-600">
+          I agree to the <span class="text-purple-600">Terms & Conditions</span>
+        </label>
+
+        <button class="bg-purple-600 text-white py-3 rounded-lg w-full">
+          Sign Up
+        </button>
+
+        <!-- SWITCH PAGE -->
+        <p class="text-center text-sm mt-4">
+          Already have an account?
+          <a href="Log in.html" class="text-purple-600 font-medium">Sign in</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(id, el) {
+      const input = document.getElementById(id);
+      input.type = input.type === "password" ? "text" : "password";
+      el.textContent = input.type === "password" ? "👁" : "🙈";
+    }
+
+    function closeModal() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
