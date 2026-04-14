@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Mentors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#F7F5FA] text-[text-[rgb(10, 3, 60)]">
+    
+    <!-- NAV -->
+    <div class="lg:sticky bg-[#F7F5FA] top-0 w-[90%] flex flex-row md:gap-2 justify-self-center pt-3 pb-3 justify-between ">
+        <img md:h-5 lg:justify-self-start src="https://eduvifigma.netlify.app/img/icons/header__logo.svg" alt="">
+        
+        <!-- MOBILE NAV -->
+        <div>
+            <p><a class="lg:hidden md:hidden font-bold text-[rgb(10, 3, 60)]" href="#">Menu <i class="fa-solid fa-bars" style="color: rgb(15, 8, 64);"></i></a></p>
+        </div>
+
+        <!-- MD ABOVE -->
+         <div class="hidden md:inline-flex lg:inline-flex text-[12px] font-medium justify-between md:justify-between md:gap-3 lg:gap-[20px]">
+
+            <ul class="flex gap-2 ">
+
+                <li class="hover:underline-[#FF6652] "><a href="#">Shop</a></li>
+            
+                <el-dropdown class="relative inline-flex group">
+                    <li><a href="#">For Kindergaten <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                    <el-menu class="absolute hidden max-w-70 text-left min-w-[90px] text-[11px] font-medium justify-self-center group-hover:block top-full bg-[#F7F1F1] rounded shadow-lg border border-gray-200 z-10">
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Pool</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Money</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Play zone</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Stadium</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Knowledge</a>
+                    </el-menu>
+                </el-dropdown>
+
+                <el-dropdown class="relative inline-block group">
+                    <li><a href="#">For High School <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                    <el-menu class="absolute hidden text-left min-w-[140px] text-[11px] font-medium justify-self-center group-hover:block top-full bg-[#F7F1F1] rounded shadow-lg border border-gray-200 z-10">
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Stadium</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Quality of study</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">High-quality textbook</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Good teacher</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Good classroom</a>
+                    </el-menu>
+                </el-dropdown>
+
+                <el-dropdown class="relative inline-block group">
+                    <li><a href="#">For College <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                    <el-menu class=" absolute hidden text-left min-w-[100px] text-[11px] font-medium justify-self-center group-hover:block top-full bg-[#F7F1F1] rounded shadow-lg border-0 z-10">
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Pool</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Money</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Working zone</a>
+                    </el-menu>
+                </el-dropdown>
+
+                <el-dropdow class="relative inline-block group">
+                    <li><a href="#">Courses <i class="fa-solid fa-angle-down" style="color: rgb(10, 3, 60);"></i></a></li>
+                    <el-menu class="absolute hidden min-w-[100px] text-left text-[11px] font-medium justify-self-center group-hover:block top-full bg-[#F7F1F1] rounded shadow-lg border-0  z-10">
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Cworking zone</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Money</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Good room</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Comfort</a>
+                        <a href="#" class="block px-2 py-2 text-[rgb(10, 3, 60)] hover:text-[#FFFFFF] hover:bg-[#FF6652]">Training zone</a>
+                    </el-menu>
+                </el-dropdow> 
+            </ul>
+         </div>
+         
+            <ul class="hidden md:flex flex-row justify-between gap-2">
+                <li class=" hover:text-[#FF6652]"><a href="#">cart <i class="fa-solid fa-bag-shopping" style="color: #FF6652;"></i></a></li>
+                <li class=" hover:text-[#FF6652]"><a href="#">Account <i class="fa-regular fa-circle-user" style="color: rgb(83, 74, 154);"></i></a></li>
+            </ul>
+    </div>
+
+    <!-- call to action -->
+    <div class="bg-[#EFEBF5] w-[90%] rounded-lg ml-0 mx-0 justify-self-center">
+        <div class="hidden md:flex flex flex-row p-3 text-[11px] gap-2">
+            <p><a class="active:text-[#A55EF4] hover:text-[#A55EF4]" href="#">Home</a></p> | <p><a class="active:text-[#A55EF4] hover:text-[#A55EF4]" href="#">Our Mentors</a></p>
+        </div>
+        <div class="block md:flex md:justify-self-center md:w-[80%]">
+            <h3 class="text-[#0A033C] text-center justify-self-center pt-7 font-[700] w-[80%] md:w-[60%] text-[27px]">Eduvi has the qualified mentor</h3>
+            <img class="mix-blend-multiply h-[auto] w-[330px] justify-self-center" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*UUBDgxAycYSS5OURTxLyqQ.jpeg" alt="">
+        </div>
+    </div>
+
+    <!-- Mentors-nav -->
+    <div class="flex w-[90%] m-3 justify-self-center justify-between gap-x-2 text-[11px] md:text-[13px] overflow-x-auto">
+        <p class="bg-[#FFFFFF] duration-500 ease-in-out hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-2 md:p-3"><a class="" href="#">All Mentors</a></p>
+        <p class="bg-[#FFFFFF] duration-500 ease-in-out hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-2 md:p-3"><a href="#">For Kindergaten</a></p>
+        <p class="bg-[#FFFFFF] duration-500 ease-in-out hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-2 md:p-3"><a href="#">For High School</a></p>
+        <p class="bg-[#FFFFFF] duration-500 ease-in-out hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-2 md:p-3"><a href="#">For College</a></p>
+        <p class="bg-[#FFFFFF] duration-500 ease-in-out hover:text-[#FFFFFF] font-[400] hover:bg-[#FF6652] active:bg-[#FF6652] rounded-lg p-2 md:p-3"><a href="#">For Technology</a></p>
+    </div>
+     <!-- ALL MENTORS -->
+    <div class="block w-[90%] md:grid md:grid-cols-3 lg:grid justify-self-center md:w-[90%]  lg:grid-cols-4 md:gap-9  text-[10px]">
+
+        <!-- Founder & Mentor 1 -->
+        <div class=" w-[90%] md: h-[auto] justify-self-center mt-3">
+            <a href="single_mentor.html"><img class="w-[100%] h-[auto] rounded-lg" src="https://i.pinimg.com/1200x/eb/ce/d0/ebced0e4efc36fe9ffa19dcd3ed810bd.jpg" alt="Kristin Watson Founder & Mentor"></a>
+            <div class="">
+                <div class="justify-between flex font-medium text-[15px]">
+                    <p><a href="#">Kristin Watson</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p class="text-[13px]"><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+
+        <!-- Founder & Mentor 2 -->
+        <div class="w-[90%] h-[auto] mt-3 justify-self-center">
+            <img class="w-[100%] h-[auto] rounded-lg" src="https://i1.sndcdn.com/avatars-gCFvRMtJH7aYs35F-HmkdqA-t200x200.jpg" alt="Brooklyn Simmons Founder & Mentor">
+            <div>
+                <div class="justify-between flex font-medium text-[15px]">
+                    <p><a href="#">Brooklyn Simmons</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p class="text-[13px]"><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+
+        <!-- Founder & Mentor 3 -->
+        <div class="w-[90%] h-[auto] justify-self-center mt-3">
+            <img class="w-[100%] h-[auto] rounded-lg" src="https://scontent.fiba2-2.fna.fbcdn.net/v/t39.30808-6/473336429_122188402586174381_1181631597985698677_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=UUwpbQ5nvCAQ7kNvwEAETbP&_nc_oc=Adrn3jER5u9b26lufZNWlVzBdFbz13ewWAWH4JwZ0xmBYcWeTdSRC-4rZwWk9P3V_fk&_nc_zt=23&_nc_ht=scontent.fiba2-2.fna&_nc_gid=uwMvxBRTJVzFGcBXPpwdcA&_nc_ss=7a389&oh=00_Af1xyb5aA0cDsteBgs5ri0z1fYGQ7CL03PRUiBsblYMQ-A&oe=69DE8EFD" alt="Robert Fox Founder & Mentor">
+            <div>
+                <div class="justify-between flex font-medium text-[15px]">
+                    <p><a href="#">Robert Fox</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p class="text-[13px]"><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+
+        <!-- Founder & Mentor 4 -->
+        <div class="w-[90%] h-[auto] justify-self-center mt-3">
+            <img class="w-[100%] h-[auto] rounded-lg " src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS74T5zS2N1aaNtxo2vw7v96g3HLfnPDPYC4BZsMCYZF1JXlaPv" alt="">
+            <div>
+                <div class="justify-between flex font-medium text-[15px]">
+                    <p><a href="#">Bessie Cooper</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p class="text-[13px]"><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 5 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img class="w-[100%] h-[auto] rounded-lg " src="https://i.pinimg.com/280x280_RS/2b/d0/f5/2bd0f5509c96b4abff7ff78afd538159.jpg" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Wade Warren</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 6 -->
+        <div class="hidden  md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img class="w-[100%] h-[auto] rounded-lg " src="https://viberate-upload.ams3.cdn.digitaloceanspaces.com/prod/entity/artist/bo-degas-XQrmK" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Ronald Richards</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 7 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img class="w-[100%] h-[auto] rounded-lg " src="https://media.licdn.com/dms/image/v2/C5603AQGmCPVsgB80VQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1606137000851?e=1776902400&v=beta&t=xCIR4OBXM9Ugd9nChKO99-Pd_Arg1jdK-gO0H0Z_aJA" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Guy Hawkins</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 8 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img  class="w-[100%] h-[auto] rounded-lg " src="https://media.licdn.com/dms/image/v2/C4D03AQFjFOocIMzVeQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1663995418072?e=1776902400&v=beta&t=wzw0w7ioqzS3P2ubP5WgnWTM92o0LPStM7r8x4MIb2I" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Floyd Miles</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 9 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img  class="w-[100%] h-[auto] rounded-lg "  src="https://instagram.flos5-1.fna.fbcdn.net/v/t51.82787-15/637697779_18037320929560705_9155187919832559569_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzgzODE4NDYzNjU0Mjk1MTUzOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=ncS6trgSsP4Q7kNvwH1x50E&_nc_oc=AdoVT-t2sPsbSbZptPdgg2o0t0MLX5S44LJJeiiOuUnApFB70wMuoPFMg3r-qvc7NVE&_nc_ad=z-m&_nc_cid=1080&_nc_zt=23&_nc_ht=instagram.flos5-1.fna&_nc_gid=P5U3QmTzx8ytCAZhS-G7aA&_nc_ss=7a32e&oh=00_Af1MCy18syQfXN_FG4u_Cn2YErqFmHhsk4--TbUoGrhC3A&oe=69D7E372" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Theresa Webb</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 10 -->
+        <div class="hidden md:grid w-[90%] h-[68] justify-self-center mt-3">
+            <img  class="w-[100%] h-[200px] rounded-lg "  src="https://images.unsplash.com/photo-1619169312864-c81168058d7a?crop=entropy&cs=tinysrgb&fit=max&fm=webp&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDc0fHxtYW58ZW58MHx8fHwxNjk4NDcwNzc1fDA&ixlib=rb-4.0.3&q=80&w=960" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Cody Fisher</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 11 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img  class="w-[100%] h-[200px] rounded-lg "  src="https://academia.uc.cl/wp-content/uploads/2025/11/imagen2.jpg" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Courtney Henry</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+        
+        <!-- Founder & Mentor 12 -->
+        <div class="hidden md:grid w-[90%] h-[auto] justify-self-center mt-3">
+            <img  class="w-[100%] h-[auto] rounded-lg "  src="https://media.licdn.com/dms/image/v2/C5603AQEpOo3WNPtS_w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1646563899461?e=1776902400&v=beta&t=86cnbv0zz2XIqXiWlAybLWXDzv2mQwqBqV5iblIejVk" alt="">
+            <div>
+                <div class="justify-between flex">
+                    <p><a href="#">Jerome Bell</a></p> 
+                    <a href="#"><i class="fa-solid fa-angle-down" style="color: rgb(0, 0, 0);"></i></a>
+                </div>
+                <p><a href="#">Founder & Mentor</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE NO. -->
+    <div class="mt-10 mb-6  justify-self-center gap-3 flex text-[12px]">
+        <p class="bg-[#F2E5FF] pt-1 px-2 pb-1 py-2 rounded-md hover:bg-[#9c4ef5]"><a  href="#"><i class="fa-solid fa-chevron-left fa-2xs"  style="color: #9c4ef5;"></i></a></p>
+        <p>Page</p>
+        <p><a class="bg-[#ffffff] pt-1 px-2 pb-1 py-2 rounded-md" href="#">1</a></p>
+        <p>of 3</p>
+        <p><a class="justify-center rounded-md pt-1 px-2 pb-1 py-2 bg-[#9c4ef5]" href="#"><i class="fa-solid fa-chevron-right fa-2xs" style="color: rgb(255, 255, 255);"></i></a></p>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div class="bg-[#0A033C] p-3 w-[90%] justify-self-center text-[white] rounded-lg text-center">
+        <div class="justify-self-center">
+            <h2 class="text-[23px] font-medium text-[white] self-center max-w-70 m-3">Subscribe For More Update Every New Course</h2>
+            <p class="text-[10px] text-[#ADABBE]">20k+ students daily learn with Eduvi. Subscribe for new courses</p>
+        </div>
+        <form class="m-3 text-[12px] self-center font-light" action="">
+            <input class="bg-[#3B3563] p-1 border-0 rounded-xs" type="text" placeholder="enter your email">
+            <input type="button" value="Subscribe" class="bg-[#9C4DF4] rounded-xs m-0 p-1">
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="m-6 lg:w-[90%] lg:justify-between text-[#0A033C] grid grid-cols-2 md:grid-cols-3 lg:flex md:ml-10 justify-self-center lg:gap-x-7  md:item-gap-7  ">
+        <div class="">
+            <img class="h-[20px]" src="https://eduvifigma.netlify.app/img/icons/header__logo.svg" alt="">
+            <div class="mt-3 mb-3">
+                <span class="hover:bg-[#FF6652] align-center rounded-[20px]">
+                    <i class="fa-brands fa-facebook-f" style="color: rgb(15, 8, 64); align-self: center;"></i>
+                </span>
+                <span class="hover:bg-[#FF6652]">
+                    <i class="fa-brands fa-instagram" style="color: rgb(15, 8, 64);"></i>
+                </span>
+                <span class="hover:bg-[#FF6652]">
+                    <i class="fa-brands fa-x-twitter" style="color: rgb(15, 8, 64);"></i>
+                </span>
+                <span class="hover:bg-[#FF6652]">
+                    <i class="fa-brands fa-linkedin" style="color: rgb(15, 8, 64);"></i>
+                </span>
+            </div>
+            <div class="mt-3 mb-3 text-[12px]">
+                <p class="text-[#5d5a6f] leading-6">©2021 Eduvi.co</p>
+            </div>
+            <div>
+                <p class="text-[#5d5a6f] leading-6 max-w-40 text-[12px]">Eduvi is a registered trademark of Eduvi.co</p>
+            </div>
+        </div>
+        <div class="text-[12px] mt-5">
+            <h1 class="text-[15px] font-semibold">Courses</h1>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Classroom courses</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Virtual classroom courses</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">E-learning coursesVideo Courses</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Video Courses</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Offline Courses</a></p>
+        </div>
+        <div class="text-[12px] mt-5">
+            <h1 class="text-[15px] font-semibold">Community</h1>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Learners</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Parteners</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Developers</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Transactions</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Blog</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Teaching Center</a></p>
+        </div>
+        <div class="text-[12px] mt-5">
+            <h2 class="text-[15px] font-semibold">Quick links</h2>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Home</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Professional Education</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Courses</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Admissions</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Testimonial</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Programs</a></p>
+        </div>
+        <div class="text-[12px] mt-5">
+            <h2 class="text-[15px] font-semibold">More</h2>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Press</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Investors</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Terms</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Privacy</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Help</a></p>
+            <p><a class="hover:text-[#FF6652] text-[#5d5a6f] leading-6" href="#">Contact</a></p>
+        </div>
+    </footer>
+</body>
+</html>
