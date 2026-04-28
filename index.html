@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eduvi – Grow Your Skills Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+<style>
+  /* ─── VARIABLES ────────────────────────────────────────── */
+  :root {
+    --primary:   #7B5EA7;
+    --primary-light: #9b7dc8;
+    --orange:    #F97316;
+    --pink:      #FF6B6B;
+    --green:     #22C55E;
+    --teal:      #06B6D4;
+    --yellow:    #FBBF24;
+    --dark:      #1E1B4B;
+    --dark-navy: #1a1a3e;
+    --text:      #374151;
+    --text-light:#6B7280;
+    --bg:        #F8F7FF;
+    --bg-card:   #FFFFFF;
+    --border:    #E5E7EB;
+    --radius:    12px;
+    --shadow:    0 4px 24px rgba(123,94,167,.12);
+    --shadow-lg: 0 8px 40px rgba(123,94,167,.18);
+    --transition:all .25s ease;
+  }
+
+  /* ─── RESET ─────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+  img  { max-width: 100%; display: block; }
+  a    { text-decoration: none; color: inherit; }
+  ul   { list-style: none; }
+
+  /* ─── UTILITIES ──────────────────────────────────────────── */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 28px; border-radius: 50px; font-weight: 700; font-size: .9rem; cursor: pointer; border: none; transition: var(--transition); }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(123,94,167,.35); }
+  .btn-orange  { background: var(--orange); color: #fff; }
+  .btn-orange:hover { filter: brightness(1.1); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: #fff; }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 700; letter-spacing: .06em; color: var(--orange); background: #FFF3E8; border-radius: 4px; padding: 3px 10px; margin-bottom: 10px; }
+  .section-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700; color: var(--dark); text-align: center; line-height: 1.25; }
+  .section-sub   { text-align: center; color: var(--text-light); max-width: 580px; margin: 12px auto 0; font-size: .95rem; line-height: 1.7; }
+
+ 
+
+  /* ─── HERO ───────────────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #F8F6FF 0%, #EEF0FB 100%);
+    padding: 60px 0 0;
+    overflow: hidden;
+  }
+  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+  .hero-content { animation: fadeUp .6s ease .1s both; }
+  @keyframes fadeUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .hero-title { font-family: 'Poppins', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 18px; }
+  .hero-desc  { color: var(--text-light); font-size: .95rem; line-height: 1.75; max-width: 440px; margin-bottom: 28px; }
+  .hero-search { display: flex; gap: 8px; align-items: center; background: #fff; border-radius: 50px; padding: 6px 6px 6px 16px; box-shadow: var(--shadow); max-width: 420px; }
+  .hero-search input { flex: 1; border: none; outline: none; font-size: .9rem; font-family: 'Nunito', sans-serif; color: var(--text); background: transparent; }
+  .hero-search select { border: none; outline: none; font-size: .85rem; background: transparent; color: var(--text-light); padding-right: 8px; font-family: 'Nunito', sans-serif; }
+  .hero-image { position: relative; display: flex; justify-content: center; animation: fadeUp .6s ease .25s both; }
+  .hero-img-wrap { background: linear-gradient(145deg, #FFD4B8 0%, #FFBBA0 100%); border-radius: 50% 50% 0 0 / 60% 60% 0 0; width: 340px; height: 380px; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; position: relative; }
+  .hero-img-wrap img { height: 370px; object-fit: cover; }
+  .hero-float { position: absolute; background: #fff; border-radius: 12px; padding: 10px 14px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 700; animation: float 3s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  .hero-float.top-left  { top: 30px; left: -20px; animation-delay: 0s; }
+  .hero-float.top-right { top: 20px; right: -10px; animation-delay: .5s; }
+  .hero-float.bot-right { bottom: 60px; right: -20px; animation-delay: 1s; }
+  .hero-float-icon { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; font-size: 1rem; flex-shrink: 0; }
+
+  /* ─── FEATURES ───────────────────────────────────────────── */
+  .features { padding: 80px 0 40px; }
+  .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; }
+
+  /* ─── VIDEO SECTION ──────────────────────────────────────── */
+  .video-section { padding: 0 0 60px; }
+  .video-wrap { border-radius: 20px; overflow: hidden; position: relative; max-width: 900px; margin: 40px auto 0; box-shadow: var(--shadow-lg); }
+  .video-thumb { width: 100%; height: 360px; object-fit: cover; background: linear-gradient(135deg,#1e1b4b,#4c1d95); display: flex; align-items: center; justify-content: center; }
+  .video-thumb-inner { width: 100%; height: 360px; background: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80') center/cover; position: relative; }
+  .video-thumb-inner::after { content:''; position: absolute; inset:0; background: rgba(0,0,0,.25); }
+  .play-btn { position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); width: 64px; height: 64px; background: var(--primary); border-radius: 50%; display: grid; place-items: center; cursor: pointer; z-index: 2; box-shadow: 0 0 0 12px rgba(123,94,167,.25); transition: var(--transition); }
+  .play-btn:hover { transform: translate(-50%,-50%) scale(1.1); }
+  .play-btn svg { width: 22px; fill: #fff; }
+  .video-classes { display: flex; justify-content: center; gap: 40px; margin-top: 32px; }
+  .video-class-item { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: .95rem; }
+  .vci-icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 1.1rem; }
+
+  /* ─── COURSES SECTION ────────────────────────────────────── */
+  .courses-section { padding: 80px 0; background: #fff; }
+  .tab-row { display: flex; justify-content: center; gap: 8px; margin: 28px 0; }
+  .tab-btn { padding: 8px 24px; border-radius: 50px; font-weight: 700; font-size: .875rem; border: none; cursor: pointer; transition: var(--transition); background: #F3F0FF; color: var(--text-light); }
+  .tab-btn.active { background: var(--orange); color: #fff; }
+  .tab-btn:hover:not(.active) { background: #e0d9ff; }
+  .courses-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .course-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; transition: var(--transition); cursor: pointer; }
+  .course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--primary-light); }
+  .cc-num { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 1rem; color: #fff; margin-bottom: 12px; flex-shrink: 0; }
+  .cc-title { font-weight: 800; font-size: .95rem; color: var(--dark); margin-bottom: 6px; }
+  .cc-desc  { font-size: .8rem; color: var(--text-light); line-height: 1.6; margin-bottom: 14px; }
+  .cc-actions { display: flex; gap: 8px; }
+  .cc-btn { padding: 6px 14px; border-radius: 50px; font-size: .75rem; font-weight: 700; border: none; cursor: pointer; transition: var(--transition); }
+  .cc-btn-primary { background: var(--primary); color: #fff; }
+  .cc-btn-outline  { background: transparent; border: 1.5px solid var(--border); color: var(--text-light); }
+  .cc-btn:hover { opacity: .85; }
+  .courses-cta { text-align: center; margin-top: 36px; }
+
+  /* ─── COVID BANNER ───────────────────────────────────────── */
+  .covid-section { background: linear-gradient(135deg, #1a1a3e 0%, #2d2a6e 100%); padding: 60px 0; overflow: hidden; }
+  .covid-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; }
+  .covid-tag { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .08em; color: var(--primary-light); margin-bottom: 12px; text-transform: uppercase; }
+  .covid-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1.25; margin-bottom: 14px; }
+  .covid-desc  { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.7; margin-bottom: 28px; }
+  .covid-image { border-radius: 20px; overflow: hidden; background: rgba(255,255,255,.05); height: 280px; display: flex; align-items: center; justify-content: center; position: relative; }
+  .covid-image img { height: 280px; object-fit: cover; border-radius: 20px; }
+
+  /* ─── MENTOR SECTION ─────────────────────────────────────── */
+  .mentor-section { padding: 80px 0; }
+  .mentor-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; }
+  .mentor-image { position: relative; }
+  .mentor-circle { width: 320px; height: 320px; background: linear-gradient(135deg, #FFD4B8, #FFBBA0); border-radius: 50%; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+  .mentor-circle img { height: 310px; object-fit: cover; }
+  .mentor-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; color: var(--dark); line-height: 1.25; margin-bottom: 16px; }
+  .mentor-desc  { color: var(--text-light); font-size: .95rem; line-height: 1.7; margin-bottom: 28px; }
+
+  /* ─── SUBSCRIBE SECTION ──────────────────────────────────── */
+  .subscribe-section { background: #1a1a3e; padding: 70px 0; position: relative; overflow: hidden; }
+  .subscribe-inner { text-align: center; position: relative; z-index: 2; }
+  .sub-title { font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 10px; }
+  .sub-desc  { color: rgba(255,255,255,.55); font-size: .9rem; margin-bottom: 28px; }
+  .sub-form  { display: flex; gap: 10px; max-width: 480px; margin: 0 auto; background: rgba(255,255,255,.08); border-radius: 50px; padding: 6px 6px 6px 20px; }
+  .sub-form input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: .9rem; font-family: 'Nunito', sans-serif; }
+  .sub-form input::placeholder { color: rgba(255,255,255,.4); }
+  .sub-avatars { position: absolute; top: 50%; transform: translateY(-50%); }
+  .sub-avatars.left  { left: 40px; }
+  .sub-avatars.right { right: 40px; }
+  .sub-avatar { width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,.15); border: 3px solid rgba(255,255,255,.2); overflow: hidden; margin: 14px 0; }
+  .sub-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  footer { background: #fff; border-top: 1px solid var(--border); padding: 48px 0 28px; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 36px; }
+  .footer-brand p { font-size: .82rem; color: var(--text-light); line-height: 1.6; margin-top: 10px; }
+  .footer-social { display: flex; gap: 10px; margin-top: 14px; }
+  .footer-social a { width: 30px; height: 30px; border-radius: 6px; background: var(--bg); display: grid; place-items: center; font-size: .85rem; color: var(--text-light); transition: var(--transition); }
+  .footer-social a:hover { background: var(--primary); color: #fff; }
+  .footer-col h4 { font-weight: 800; font-size: .9rem; color: var(--dark); margin-bottom: 14px; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col li a { font-size: .82rem; color: var(--text-light); transition: var(--transition); }
+  .footer-col li a:hover { color: var(--primary); }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; text-align: center; font-size: .8rem; color: var(--text-light); }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+       <!-- navbar -->
+
+    <div class="nav">
+
+      <button id="darkModeBtn" title="Toggle dark mode">🌙</button>
+
+      <a href="index.html">
+        <img src="images/Logo (1).png" alt="Logo" class="logo" />
+      </a>
+
+      <ul class="menu">
+        <li><a href="shop.html">Shop</a></li>
+
+        <li class="has-dropdown">
+          <a href="#">For Kindergarten <img src="images/down arrow.png" alt="" /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#">For High School <img src="images/down arrow.png" alt="" /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#">For College <img src="images/down arrow.png" alt="" /></a>
+          <ul class="dropdown">
+            <li><a href="#">Math</a></li>
+            <li><a href="#">English</a></li>
+            <li><a href="#">Science</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="#">More <img src="images/down arrow.png" alt="" /></a>
+          <ul class="dropdown">
+            <li><a href="mentors.html">Mentors</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="join-as-teacher.html">Join as Teacher</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="courses.html">Courses </a>
+        </li>
+      </ul>
+
+      <ul class="nav-actions">
+        <li>
+          <a href="#">Cart (<span id="cartCount">0</span>)</a>
+          <img src="images/shopping cart.png" alt="cart" class="cart-icon" />
+        </li>
+        <li id="desktopProfileBtn">
+          <a href="login.html">My Account</a>
+          <img src="images/account image.png" alt="account" class="account-icon" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="tag">Never Stop Learning</span>
+        <h1 class="hero-title">Grow up your skills<br>by online courses<br>with Eduvi</h1>
+        <p class="hero-desc">Build skills with courses and certificates from world-class universities and companies. Learn at your own pace from top instructors.</p>
+        <div class="hero-search">
+          <select>
+            <option>All Courses</option>
+            <option>Design</option>
+            <option>Development</option>
+          </select>
+          <input type="text" placeholder="Search Courses..." />
+          <button class="btn btn-primary" style="padding:10px 22px;">🔍 Search</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-img-wrap">
+          <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400&q=80" alt="Student" />
+        </div>
+        <div class="hero-float top-left">
+          <div class="hero-float-icon" style="background:#FFF3E8;">📖</div>
+          <div><div style="font-size:.65rem;color:var(--text-light)">Enrolled</div><div>2.5k Students</div></div>
+        </div>
+        <div class="hero-float top-right">
+          <div class="hero-float-icon" style="background:#F0FDF4;">🏆</div>
+          <div><div style="font-size:.65rem;color:var(--text-light)">Certified</div><div>Top Courses</div></div>
+        </div>
+        <div class="hero-float bot-right">
+          <div class="hero-float-icon" style="background:#F3F0FF;">⭐</div>
+          <div><div style="font-size:.65rem;color:var(--text-light)">Rating</div><div>4.9 / 5.0</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ════════════════════════════════════════════ -->
+<section class="features">
+  <div class="container">
+    <h2 class="section-title">High quality video, audio<br>& live classes</h2>
+    <p class="section-sub">Experience learning like never before with our premium platform. Access thousands of courses from expert instructors worldwide and earn recognized certificates.</p>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="#" class="btn btn-primary">Visit Courses</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIDEO ════════════════════════════════════════════════ -->
+<section class="video-section">
+  <div class="container">
+    <div class="video-wrap">
+      <div class="video-thumb-inner">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="video-classes">
+      <div class="video-class-item">
+        <div class="vci-icon" style="background:#FFF3E8;">🔊</div>
+        <span>Audio Classes</span>
+      </div>
+      <div class="video-class-item">
+        <div class="vci-icon" style="background:#F3F0FF;">👥</div>
+        <span>Live Classes</span>
+      </div>
+      <div class="video-class-item">
+        <div class="vci-icon" style="background:#F0FDF4;">🎥</div>
+        <span>Recorded Class</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COURSES ══════════════════════════════════════════════ -->
+<section class="courses-section">
+  <div class="container">
+    <h2 class="section-title">Qualified lessons for students</h2>
+    <p class="section-sub">Choose from thousands of online courses and start your learning journey today with expert instructors.</p>
+    <div class="tab-row">
+      <button class="tab-btn">Beginners</button>
+      <button class="tab-btn active">Mid-Level</button>
+      <button class="tab-btn">Ratings</button>
+    </div>
+    <div class="courses-grid">
+      <!-- Row 1 -->
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--orange);">1</div>
+        <div class="cc-title">Standard One</div>
+        <p class="cc-desc">Build foundational skills and unlock new career paths with structured beginner courses.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--teal);">2</div>
+        <div class="cc-title">Standard Two</div>
+        <p class="cc-desc">Take your skills to the next level with intermediate courses designed by experts.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--pink);">3</div>
+        <div class="cc-title">Standard Three</div>
+        <p class="cc-desc">Explore advanced concepts and gain industry-ready expertise through hands-on projects.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--dark);">4</div>
+        <div class="cc-title">Standard Four</div>
+        <p class="cc-desc">Master cutting-edge techniques used by professionals in leading global organizations.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--green);">5</div>
+        <div class="cc-title">Standard Five</div>
+        <p class="cc-desc">Flexible learning paths for working professionals to advance their career goals.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--orange);">6</div>
+        <div class="cc-title">Standard Six</div>
+        <p class="cc-desc">Comprehensive curriculum covering all aspects of modern digital learning platforms.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--pink);">7</div>
+        <div class="cc-title">Standard Seven</div>
+        <p class="cc-desc">Learn from industry leaders and get certified in the most sought-after skills.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="cc-num" style="background:var(--primary);">8</div>
+        <div class="cc-title">Standard Eight</div>
+        <p class="cc-desc">Advanced specialization programs to help you become a domain expert quickly.</p>
+        <div class="cc-actions">
+          <button class="cc-btn cc-btn-primary">View Details</button>
+          <button class="cc-btn cc-btn-outline">Class Info</button>
+        </div>
+      </div>
+    </div>
+    <div class="courses-cta">
+      <a href="#" class="btn btn-primary" style="margin-top:12px;">Follow &amp; Explore</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COVID SECTION ════════════════════════════════════════ -->
+<section class="covid-section">
+  <div class="container">
+    <div class="covid-inner">
+      <div>
+        <span class="covid-tag">College Level</span>
+        <h2 class="covid-title">Don't waste time in<br>COVID-19 pandemic.<br>Develop your skills.</h2>
+        <p class="covid-desc">Build in-demand skills from the comfort of your home. Access thousands of expert-led courses and grow professionally during challenging times.</p>
+        <a href="#" class="btn btn-orange">Register Now</a>
+      </div>
+      <div class="covid-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80" alt="Student studying" style="width:100%;height:280px;object-fit:cover;border-radius:20px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MENTOR ════════════════════════════════════════════════ -->
+<section class="mentor-section">
+  <div class="container">
+    <div class="mentor-inner">
+      <div class="mentor-image">
+        <div class="mentor-circle">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=320&q=80" alt="Mentor" />
+        </div>
+      </div>
+      <div>
+        <h2 class="mentor-title">Want to share your<br>knowledge? Join us<br>a Mentor</h2>
+        <p class="mentor-desc">Share your expertise with thousands of eager learners worldwide. Create your own courses, set your schedule, and earn while doing what you love. Join our community of top educators today.</p>
+        <a href="#" class="btn btn-primary">Become a Mentor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SUBSCRIBE ════════════════════════════════════════════ -->
+<section class="subscribe-section">
+  <div class="sub-avatars left">
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=1" alt="" /></div>
+    <div class="sub-avatar" style="margin-left:30px;"><img src="https://i.pravatar.cc/52?img=5" alt="" /></div>
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=9" alt="" /></div>
+  </div>
+  <div class="container">
+    <div class="subscribe-inner">
+      <h2 class="sub-title">Subscribe For Get Update<br>Every New Courses</h2>
+      <p class="sub-desc">20k+ students daily learn with Eduvi. Subscribe for new courses.</p>
+      <div class="sub-form">
+        <input type="email" placeholder="enter your email" />
+        <button class="btn btn-primary" style="border-radius:50px;padding:10px 24px;">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="sub-avatars right">
+    <div class="sub-avatar" style="margin-left:auto;"><img src="https://i.pravatar.cc/52?img=12" alt="" /></div>
+    <div class="sub-avatar"><img src="https://i.pravatar.cc/52?img=20" alt="" /></div>
+    <div class="sub-avatar" style="margin-left:auto;"><img src="https://i.pravatar.cc/52?img=25" alt="" /></div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="margin-bottom:10px;">
+          <div class="nav-logo-icon"><span>📚</span></div>
+          Eduvi
+        </a>
+        <p>© 2021 Eduvi.co<br><br>Eduvi is a registered trademark of Eduvi.co</p>
+        <div class="footer-social">
+          <a href="#">f</a>
+          <a href="#">📷</a>
+          <a href="#">🐦</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="#">Classroom courses</a></li>
+          <li><a href="#">Virtual classroom courses</a></li>
+          <li><a href="#">E-learning courses</a></li>
+          <li><a href="#">Video Courses</a></li>
+          <li><a href="#">Offline Courses</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Learners</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Transactions</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Teaching Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Professional Education</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Testimonial</a></li>
+          <li><a href="#">Programs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>More</h4>
+        <ul>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2021 Eduvi. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.course-card, .video-wrap, .covid-inner, .mentor-inner').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
+
