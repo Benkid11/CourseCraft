@@ -918,6 +918,98 @@ body.dark .page-input {
   border-color: #333;
 }
 
+/* ================= FOOTER ================= */
+
+footer {
+  background-color: #0a033c;
+  color: #ffffff;
+  margin-top: 80px;
+  padding: 60px 0 20px;
+}
+
+footer .container {
+  margin: 0 80px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 40px;
+}
+
+/* BRAND SECTION */
+.footer-brand p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 24px;
+  margin-top: 10px;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.footer-social a {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: #e8513a;
+  transform: translateY(-3px);
+}
+
+/* HEADINGS */
+.footer-col h4 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* LIST */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #e8513a;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* TABLET */
 @media (max-width: 1024px) {
   .card-grid {
@@ -957,6 +1049,14 @@ body.dark .page-input {
   .img2,
   .img5 {
     display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer .container {
+    margin: 0 40px;
   }
 }
 
@@ -1024,6 +1124,13 @@ body.dark .page-input {
     right: 20px;
   }
 
+  .top h2 {
+    font-size: 24px;
+    line-height: 32px;
+    width: 100%;
+    height: auto;
+  }
+
   .subscribe {
     height: auto;
     padding: 40px 20px;
@@ -1058,6 +1165,18 @@ body.dark .page-input {
   .img5,
   .img6 {
     display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer .container {
+    margin: 0 20px;
+  }
+
+  .footer-social {
+    justify-content: flex-start;
   }
 }
 
