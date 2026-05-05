@@ -292,6 +292,7 @@ body.dark .subscribe-section {
 /* ═════════ BUTTON ═════════ */
 /* BUTTON BASE */
 .modal-btn {
+  display: block;        /* ← add this */
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -305,6 +306,7 @@ body.dark .subscribe-section {
   cursor: pointer;
   transition: transform 0.25s, box-shadow 0.25s;
   z-index: 1;
+  text-align: center;    /* ← add this too so text stays centered */
 }
 
 /* hover lift */
@@ -368,9 +370,9 @@ body.dark .subscribe-section {
 
     <p>Premium learning, redefined.</p>
 
-    <button class="modal-btn">
-      <a href="courses.html"> <span>Explore Courses</span> </a>
-    </button>
+    <a href="courses.html" class="modal-btn">
+      <span>Explore Courses</span>
+    </a>
   </div>
 </div>
 
