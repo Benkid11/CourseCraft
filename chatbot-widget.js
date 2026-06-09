@@ -3,6 +3,8 @@
   const WEBHOOK_URL =
     "https://leatha-nondrinkable-india.ngrok-free.dev/webhook/c9187014-f9da-432c-9ebe-2070987a5224/chat";
 
+  const TELEGRAM_URL = "https://t.me/Edduvi_bot";
+
   // Simple session ID — stays the same for this page visit
   const SESSION_ID = "cc-" + Math.random().toString(36).slice(2, 10);
 
@@ -37,7 +39,6 @@
       fill: #fff;
     }
 
-    /* Pulse ring on bubble */
     #eduvi-chat-bubble::before {
       content: '';
       position: absolute;
@@ -51,6 +52,65 @@
       0%   { transform: scale(1);   opacity: 0.7; }
       100% { transform: scale(1.8); opacity: 0; }
     }
+
+    #eduvi-chat-bubble::after {
+      content: 'Chat with us';
+      position: absolute;
+      right: 62px;
+      background: #1A1A2E;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    #eduvi-chat-bubble:hover::after { opacity: 1; }
+
+    /* ── TELEGRAM BUTTON ── */
+    #eduvi-tg-btn {
+      position: fixed;
+      bottom: 154px;
+      right: 28px;
+      width: 54px;
+      height: 54px;
+      background: #0088cc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,136,204,0.4);
+      z-index: 9999;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #eduvi-tg-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 26px rgba(0,136,204,0.55);
+    }
+    #eduvi-tg-btn svg { width: 28px; height: 28px; fill: #fff; }
+    #eduvi-tg-btn::after {
+      content: 'Chat on Telegram';
+      position: absolute;
+      right: 62px;
+      background: #1A1A2E;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    #eduvi-tg-btn:hover::after { opacity: 1; }
 
     /* ── CHAT WINDOW ── */
     #eduvi-chat-window {
@@ -78,7 +138,6 @@
       pointer-events: all;
     }
 
-    /* Header */
     #eduvi-chat-header {
       background: linear-gradient(135deg, #1A1A2E 0%, #2d2a6e 100%);
       padding: 16px 18px;
@@ -97,7 +156,6 @@
       font-size: 18px;
       flex-shrink: 0;
     }
-    #eduvi-chat-header-info {}
     #eduvi-chat-header-name {
       color: #ffffff;
       font-weight: 600;
@@ -137,7 +195,6 @@
     }
     #eduvi-close-btn:hover { background: rgba(255,255,255,0.22); }
 
-    /* Messages */
     #eduvi-messages {
       flex: 1;
       overflow-y: auto;
@@ -176,7 +233,6 @@
       align-self: flex-end;
     }
 
-    /* Typing indicator */
     .eduvi-typing {
       display: flex;
       gap: 5px;
@@ -202,7 +258,6 @@
       30%           { transform: translateY(-6px); }
     }
 
-    /* Input bar */
     #eduvi-input-bar {
       display: flex;
       align-items: center;
@@ -221,7 +276,6 @@
       outline: none;
       color: #1A1A2E;
       transition: border-color 0.2s;
-      resize: none;
     }
     #eduvi-input:focus { border-color: #6C63FF; }
     #eduvi-input::placeholder { color: #b0aed4; }
@@ -243,7 +297,6 @@
     #eduvi-send-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
     #eduvi-send-btn svg { width: 16px; height: 16px; fill: #fff; }
 
-    /* Mobile */
     @media (max-width: 480px) {
       #eduvi-chat-window {
         right: 12px;
@@ -251,12 +304,13 @@
         width: auto;
         bottom: 140px;
       }
+      #eduvi-tg-btn::after,
+      #eduvi-chat-bubble::after { display: none; }
     }
   `;
   document.head.appendChild(style);
 
-  // ── HTML ────────────────────────────────────────────────────
-  // Bubble
+  // ── BUBBLE ──────────────────────────────────────────────────
   const bubble = document.createElement("div");
   bubble.id = "eduvi-chat-bubble";
   bubble.title = "Chat with Eduvi";
@@ -270,7 +324,21 @@
   `;
   document.body.appendChild(bubble);
 
-  // Chat window
+  // ── TELEGRAM BUTTON ─────────────────────────────────────────
+  const tgBtn = document.createElement("a");
+  tgBtn.id = "eduvi-tg-btn";
+  tgBtn.href = TELEGRAM_URL;
+  tgBtn.target = "_blank";
+  tgBtn.rel = "noopener noreferrer";
+  tgBtn.title = "Chat on Telegram";
+  tgBtn.innerHTML = `
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/>
+    </svg>
+  `;
+  document.body.appendChild(tgBtn);
+
+  // ── CHAT WINDOW ─────────────────────────────────────────────
   const chatWindow = document.createElement("div");
   chatWindow.id = "eduvi-chat-window";
   chatWindow.innerHTML = `
@@ -294,9 +362,9 @@
 
   // ── REFERENCES ──────────────────────────────────────────────
   const messagesEl = document.getElementById("eduvi-messages");
-  const inputEl    = document.getElementById("eduvi-input");
-  const sendBtn    = document.getElementById("eduvi-send-btn");
-  const closeBtn   = document.getElementById("eduvi-close-btn");
+  const inputEl = document.getElementById("eduvi-input");
+  const sendBtn = document.getElementById("eduvi-send-btn");
+  const closeBtn = document.getElementById("eduvi-close-btn");
 
   // ── TOGGLE ──────────────────────────────────────────────────
   let isOpen = false;
@@ -304,12 +372,12 @@
   function openChat() {
     isOpen = true;
     chatWindow.classList.add("open");
-    // stop bubble pulse when open
     bubble.style.animation = "none";
     inputEl.focus();
-    // show welcome message only once
     if (messagesEl.children.length === 0) {
-      addBotMessage("👋 Hi there! I'm the Eduvi assistant. Ask me about courses, pricing, mentors, or anything about the platform!");
+      addBotMessage(
+        "👋 Hi there! I'm the Eduvi assistant. Ask me about courses, pricing, mentors, or anything about the platform!",
+      );
     }
   }
 
@@ -337,7 +405,6 @@
   function addBotMessage(text) {
     return addMessage(text, "bot");
   }
-
   function addUserMessage(text) {
     return addMessage(text, "user");
   }
@@ -371,30 +438,31 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "1"
+          "ngrok-skip-browser-warning": "1",
         },
         body: JSON.stringify({
           action: "sendMessage",
           sessionId: SESSION_ID,
-          chatInput: text
-        })
+          chatInput: text,
+        }),
       });
 
       hideTyping();
 
-      // Handle streaming (Agent 1 format: line-by-line JSON with type:"item")
       const contentType = response.headers.get("content-type") || "";
       let botReply = "";
 
-      if (contentType.includes("text/event-stream") || contentType.includes("text/plain")) {
-        // Streaming response
+      if (
+        contentType.includes("text/event-stream") ||
+        contentType.includes("text/plain")
+      ) {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
           const chunk = decoder.decode(value);
-          const lines = chunk.split("\n").filter(l => l.trim());
+          const lines = chunk.split("\n").filter((l) => l.trim());
           for (const line of lines) {
             try {
               const parsed = JSON.parse(line);
@@ -405,16 +473,22 @@
           }
         }
       } else {
-        // JSON response (Agent 2 format: {"output":"..."})
         const data = await response.json();
-        botReply = data.output || data.text || data.message || "Sorry, I didn't get a response.";
+        botReply =
+          data.output ||
+          data.text ||
+          data.message ||
+          "Sorry, I didn't get a response.";
       }
 
-      addBotMessage(botReply || "Sorry, I couldn't get a response. Please try again.");
-
+      addBotMessage(
+        botReply || "Sorry, I couldn't get a response. Please try again.",
+      );
     } catch (err) {
       hideTyping();
-      addBotMessage("Oops! Something went wrong. Please try again in a moment.");
+      addBotMessage(
+        "Oops! Something went wrong. Please try again in a moment.",
+      );
       console.error("Eduvi chatbot error:", err);
     }
 
@@ -431,5 +505,4 @@
       sendMessage();
     }
   });
-
 })();
